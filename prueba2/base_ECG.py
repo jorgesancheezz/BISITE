@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix, classification_report
+import os
 
 # Parámetros de la simulación
 n_patients = 100          # Número de pacientes simulados
@@ -73,8 +74,12 @@ df_sim = pd.DataFrame(records)
 df_sim.to_csv("simulated_pulso_vital.csv", index=False)
 print("Base de datos simulada creada: simulated_pulso_vital.csv")
 
-# Ver primeras filas
-print(df_sim.head())
+
+# Crear carpeta de resultados
+os.makedirs('resultados', exist_ok=True)
+
+# Guardar primeras filas
+df_sim.head().to_csv('resultados/primeras_filas.csv', index=False)
 
 # Distribución de edad
 plt.figure(figsize=(8,4))
@@ -82,7 +87,9 @@ sns.histplot(df_sim['age'], bins=15, kde=True)
 plt.title("Distribución de edades")
 plt.xlabel("Edad")
 plt.ylabel("Cantidad de pacientes")
-plt.show()
+plt.tight_layout()
+plt.savefig('resultados/edad_hist.png')
+plt.close()
 
 # Proporción FA detectada vs confirmada
 plt.figure(figsize=(6,4))
@@ -92,13 +99,17 @@ plt.title("FA detectada vs confirmada")
 plt.xlabel("FA (0=No, 1=Sí)")
 plt.ylabel("Cantidad de pacientes")
 plt.legend(['Detectada','Confirmada'])
-plt.show()
+plt.tight_layout()
+plt.savefig('resultados/fa_detectada_vs_confirmada.png')
+plt.close()
 
 # Cantidad por municipio
 plt.figure(figsize=(8,4))
 sns.countplot(data=df_sim, x='municipality')
 plt.title("Número de registros por municipio")
-plt.show()
+plt.tight_layout()
+plt.savefig('resultados/municipios.png')
+plt.close()
 
 # Tomamos un paciente con buena señal
 example = df_sim[df_sim['quality']=='Good'].iloc[0]
@@ -113,7 +124,9 @@ plt.plot(signal_filtered[:1000])  # mostrar primeros 1000 puntos (~4s)
 plt.title(f"ECG filtrado paciente {example['patient_id']} (FA detectada: {example['af_detected']})")
 plt.xlabel("Muestras")
 plt.ylabel("Voltaje (mV)")
-plt.show()
+plt.tight_layout()
+plt.savefig('resultados/ecg_filtrado_paciente.png')
+plt.close()
 
 # Comparar af_detected vs af_confirmed
 y_true = df_sim['af_confirmed']
@@ -121,10 +134,9 @@ y_pred = df_sim['af_detected']
 
 # Matriz de confusión
 cm = confusion_matrix(y_true, y_pred)
-print("Matriz de confusión:")
-print(cm)
+np.savetxt('resultados/matriz_confusion.txt', cm, fmt='%d', header='Matriz de confusión')
 
 # Reporte completo
 report = classification_report(y_true, y_pred, digits=4)
-print("Reporte de clasificación:")
-print(report)
+with open('resultados/reporte_clasificacion.txt', 'w') as f:
+    f.write(report)
