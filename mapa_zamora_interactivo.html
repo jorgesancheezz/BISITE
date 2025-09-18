@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bed31c87c37a13319f40b57c4257fbfa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_bed31c87c37a13319f40b57c4257fbfa" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_bed31c87c37a13319f40b57c4257fbfa = L.map(
+                "map_bed31c87c37a13319f40b57c4257fbfa",
+                {
+                    center: [41.5, -5.75],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f116d3a3c5ea1ec368c0c4a65099ab9d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f116d3a3c5ea1ec368c0c4a65099ab9d.addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var marker_5957e5cd345c1e0846f9fcb34562342a = L.marker(
+                [41.6989, -6.3464],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_3a6215c03417308d930ad84a925ff86c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_91db8f0bbb5184614efd4af68bec0324 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2e41ff7c9a7a597795073ba3cd6f39e = $(`<div id="html_f2e41ff7c9a7a597795073ba3cd6f39e" style="width: 100.0%; height: 100.0%;">Alcañices<br>Plaza Mayor, 1</div>`)[0];
+                popup_91db8f0bbb5184614efd4af68bec0324.setContent(html_f2e41ff7c9a7a597795073ba3cd6f39e);
+            
+        
+
+        marker_5957e5cd345c1e0846f9fcb34562342a.bindPopup(popup_91db8f0bbb5184614efd4af68bec0324)
+        ;
+
+        
+    
+    
+                marker_5957e5cd345c1e0846f9fcb34562342a.setIcon(icon_3a6215c03417308d930ad84a925ff86c);
+            
+    
+            var marker_32c7400dea9c96977da3615baadd1456 = L.marker(
+                [41.2447, -6.1197],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_9c826ad31ea71237396f3293e12e9014 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fb537131648df2c1105b0ea0839b9d1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eee9c7a006e5e9be457983d18b96aa45 = $(`<div id="html_eee9c7a006e5e9be457983d18b96aa45" style="width: 100.0%; height: 100.0%;">Almeida de Sayago<br>Plaza España, 1</div>`)[0];
+                popup_fb537131648df2c1105b0ea0839b9d1d.setContent(html_eee9c7a006e5e9be457983d18b96aa45);
+            
+        
+
+        marker_32c7400dea9c96977da3615baadd1456.bindPopup(popup_fb537131648df2c1105b0ea0839b9d1d)
+        ;
+
+        
+    
+    
+                marker_32c7400dea9c96977da3615baadd1456.setIcon(icon_9c826ad31ea71237396f3293e12e9014);
+            
+    
+            var marker_27f112133bdde3720c51f498af481610 = L.marker(
+                [41.8347, -5.6056],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_aa7e995bce5084b9cea222c6fe440a90 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_59b46bee0c96fd41ea1c9c4c85959de9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5beb703f167e5fc7b343184e931a639 = $(`<div id="html_d5beb703f167e5fc7b343184e931a639" style="width: 100.0%; height: 100.0%;">Aspariegos<br>Pza Mayor, 1</div>`)[0];
+                popup_59b46bee0c96fd41ea1c9c4c85959de9.setContent(html_d5beb703f167e5fc7b343184e931a639);
+            
+        
+
+        marker_27f112133bdde3720c51f498af481610.bindPopup(popup_59b46bee0c96fd41ea1c9c4c85959de9)
+        ;
+
+        
+    
+    
+                marker_27f112133bdde3720c51f498af481610.setIcon(icon_aa7e995bce5084b9cea222c6fe440a90);
+            
+    
+            var marker_f2e3f5c1e24931b5a50666066a2ec7ec = L.marker(
+                [42.0406, -6.4931],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_ed0d5a8e4657bb181ca4e5abb37894f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_48145427dc31e32629ad9783a66ea82b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d20df32b68ccb4c77f83851e71089bf7 = $(`<div id="html_d20df32b68ccb4c77f83851e71089bf7" style="width: 100.0%; height: 100.0%;">Asturianos<br>Calle Mayor, 84</div>`)[0];
+                popup_48145427dc31e32629ad9783a66ea82b.setContent(html_d20df32b68ccb4c77f83851e71089bf7);
+            
+        
+
+        marker_f2e3f5c1e24931b5a50666066a2ec7ec.bindPopup(popup_48145427dc31e32629ad9783a66ea82b)
+        ;
+
+        
+    
+    
+                marker_f2e3f5c1e24931b5a50666066a2ec7ec.setIcon(icon_ed0d5a8e4657bb181ca4e5abb37894f3);
+            
+    
+            var marker_55dd5016fb8b88d46136a044d645c13c = L.marker(
+                [42.003, -5.6782],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_6089bc5acd5b657a2696d57144c5a408 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bdb9e4f136e29fbf6b540940110e19ad = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a8d84bd94339bdc86c4a4bc7e48876f = $(`<div id="html_8a8d84bd94339bdc86c4a4bc7e48876f" style="width: 100.0%; height: 100.0%;">Benavente<br>Avda. del ferial, 22</div>`)[0];
+                popup_bdb9e4f136e29fbf6b540940110e19ad.setContent(html_8a8d84bd94339bdc86c4a4bc7e48876f);
+            
+        
+
+        marker_55dd5016fb8b88d46136a044d645c13c.bindPopup(popup_bdb9e4f136e29fbf6b540940110e19ad)
+        ;
+
+        
+    
+    
+                marker_55dd5016fb8b88d46136a044d645c13c.setIcon(icon_6089bc5acd5b657a2696d57144c5a408);
+            
+    
+            var marker_a5e3549fe74d665ea10946b7329baaa4 = L.marker(
+                [41.3708, -6.1136],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_b10ac4d2f26685faef24b7e2ecee8f28 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32a91ad78a68b6a89c82b52f7888a4f0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d550cd3779034329959246b37b7c783c = $(`<div id="html_d550cd3779034329959246b37b7c783c" style="width: 100.0%; height: 100.0%;">Bermillo de Sayago<br>Plaza Mayor, 1</div>`)[0];
+                popup_32a91ad78a68b6a89c82b52f7888a4f0.setContent(html_d550cd3779034329959246b37b7c783c);
+            
+        
+
+        marker_a5e3549fe74d665ea10946b7329baaa4.bindPopup(popup_32a91ad78a68b6a89c82b52f7888a4f0)
+        ;
+
+        
+    
+    
+                marker_a5e3549fe74d665ea10946b7329baaa4.setIcon(icon_b10ac4d2f26685faef24b7e2ecee8f28);
+            
+    
+            var marker_d0c038db50c1ba0a7f626d82e915c028 = L.marker(
+                [41.9917, -5.9278],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_973856f42baf46296310815c4b77de23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_409d0676fc034524d4d2436a186e7d51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f2af0b997274afc1c2e001335c50df0f = $(`<div id="html_f2af0b997274afc1c2e001335c50df0f" style="width: 100.0%; height: 100.0%;">Burganes de Valverde<br>Plaza Centro de Día, nan</div>`)[0];
+                popup_409d0676fc034524d4d2436a186e7d51.setContent(html_f2af0b997274afc1c2e001335c50df0f);
+            
+        
+
+        marker_d0c038db50c1ba0a7f626d82e915c028.bindPopup(popup_409d0676fc034524d4d2436a186e7d51)
+        ;
+
+        
+    
+    
+                marker_d0c038db50c1ba0a7f626d82e915c028.setIcon(icon_973856f42baf46296310815c4b77de23);
+            
+    
+            var marker_ec3ea9c843ec88c057a7d46cdeef1fba = L.marker(
+                [42.0731, -6.0161],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_b271ab9d0fd5fa1681b00ad1ebac47c1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c3d7c77726906933db2817f7d29884e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab5de904f8b3654846165ac19dbfd2ef = $(`<div id="html_ab5de904f8b3654846165ac19dbfd2ef" style="width: 100.0%; height: 100.0%;">Camarzana de Tera<br>C/ Carretera, 27</div>`)[0];
+                popup_c3d7c77726906933db2817f7d29884e2.setContent(html_ab5de904f8b3654846165ac19dbfd2ef);
+            
+        
+
+        marker_ec3ea9c843ec88c057a7d46cdeef1fba.bindPopup(popup_c3d7c77726906933db2817f7d29884e2)
+        ;
+
+        
+    
+    
+                marker_ec3ea9c843ec88c057a7d46cdeef1fba.setIcon(icon_b271ab9d0fd5fa1681b00ad1ebac47c1);
+            
+    
+            var marker_69d92509c924d87a7a3b6aea2f0da216 = L.marker(
+                [41.7281, -6.1836],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_88842227dbb9bf4ea507ba59aa40268d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_884fedbed2df44149086352a224351c3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4eb883846c354a745a5585ef70f4883b = $(`<div id="html_4eb883846c354a745a5585ef70f4883b" style="width: 100.0%; height: 100.0%;">Carbajales de Alba<br>Calle Hospital, 4</div>`)[0];
+                popup_884fedbed2df44149086352a224351c3.setContent(html_4eb883846c354a745a5585ef70f4883b);
+            
+        
+
+        marker_69d92509c924d87a7a3b6aea2f0da216.bindPopup(popup_884fedbed2df44149086352a224351c3)
+        ;
+
+        
+    
+    
+                marker_69d92509c924d87a7a3b6aea2f0da216.setIcon(icon_88842227dbb9bf4ea507ba59aa40268d);
+            
+    
+            var marker_5a38ebbb9dc9add278b1fec396e5d2dc = L.marker(
+                [42.0403, -6.5653],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_857bc180ef1e6c5bf65ae2b420e1d94b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_de761011c1d5b039e8d791a767a1375c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_75ef4f79cb419e8f9aa65d2767dfa0a5 = $(`<div id="html_75ef4f79cb419e8f9aa65d2767dfa0a5" style="width: 100.0%; height: 100.0%;">Cobreros<br>Plaza Ayuntamiento, nan</div>`)[0];
+                popup_de761011c1d5b039e8d791a767a1375c.setContent(html_75ef4f79cb419e8f9aa65d2767dfa0a5);
+            
+        
+
+        marker_5a38ebbb9dc9add278b1fec396e5d2dc.bindPopup(popup_de761011c1d5b039e8d791a767a1375c)
+        ;
+
+        
+    
+    
+                marker_5a38ebbb9dc9add278b1fec396e5d2dc.setIcon(icon_857bc180ef1e6c5bf65ae2b420e1d94b);
+            
+    
+            var marker_b684f06e4a9de4f42a910f6104fada78 = L.marker(
+                [41.5833, -5.6167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_c35595514a661eed55ed598f832522c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_40644447be2355a77c11c923bed7104c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f58d1d4e888ffdc3799502b3c546d4f4 = $(`<div id="html_f58d1d4e888ffdc3799502b3c546d4f4" style="width: 100.0%; height: 100.0%;">Coreses<br>C/ Arena, nan</div>`)[0];
+                popup_40644447be2355a77c11c923bed7104c.setContent(html_f58d1d4e888ffdc3799502b3c546d4f4);
+            
+        
+
+        marker_b684f06e4a9de4f42a910f6104fada78.bindPopup(popup_40644447be2355a77c11c923bed7104c)
+        ;
+
+        
+    
+    
+                marker_b684f06e4a9de4f42a910f6104fada78.setIcon(icon_c35595514a661eed55ed598f832522c7);
+            
+    
+            var marker_d7953044957bb2fa062c32ffb7d65e92 = L.marker(
+                [41.3125, -5.7897],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_f9b50484097500ecdd742051b8a9eb86 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0e0cdd17eaab75876ac2bf90eba51754 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0cfca97cc23d2f30712ff4c4092fb8ad = $(`<div id="html_0cfca97cc23d2f30712ff4c4092fb8ad" style="width: 100.0%; height: 100.0%;">Corrales del Vino<br>Pza. Ramón y Cajal, s/n</div>`)[0];
+                popup_0e0cdd17eaab75876ac2bf90eba51754.setContent(html_0cfca97cc23d2f30712ff4c4092fb8ad);
+            
+        
+
+        marker_d7953044957bb2fa062c32ffb7d65e92.bindPopup(popup_0e0cdd17eaab75876ac2bf90eba51754)
+        ;
+
+        
+    
+    
+                marker_d7953044957bb2fa062c32ffb7d65e92.setIcon(icon_f9b50484097500ecdd742051b8a9eb86);
+            
+    
+            var marker_0a514639c2847db9c4fc0b0da6eba681 = L.marker(
+                [41.4292, -5.7556],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_02a9efb7fa23832b4ea87a7baf68b104 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d9d8e021c1ad3621307a5cc00f603c03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_341871c736b1c38ce378d2d70abcbb96 = $(`<div id="html_341871c736b1c38ce378d2d70abcbb96" style="width: 100.0%; height: 100.0%;">El Perdigón<br>Plaza España, 1</div>`)[0];
+                popup_d9d8e021c1ad3621307a5cc00f603c03.setContent(html_341871c736b1c38ce378d2d70abcbb96);
+            
+        
+
+        marker_0a514639c2847db9c4fc0b0da6eba681.bindPopup(popup_d9d8e021c1ad3621307a5cc00f603c03)
+        ;
+
+        
+    
+    
+                marker_0a514639c2847db9c4fc0b0da6eba681.setIcon(icon_02a9efb7fa23832b4ea87a7baf68b104);
+            
+    
+            var marker_32b2c61ed93601fd938999836e3d7312 = L.marker(
+                [41.3333, -6.2667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_9b3879ed86db8fcc133fe3d1ac72a2be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac1bbc95b4c0df13abe97f12af2f700b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9746437451c018ab2ac529a68b7679c1 = $(`<div id="html_9746437451c018ab2ac529a68b7679c1" style="width: 100.0%; height: 100.0%;">Fariza<br>C/ Fermoselle, 7</div>`)[0];
+                popup_ac1bbc95b4c0df13abe97f12af2f700b.setContent(html_9746437451c018ab2ac529a68b7679c1);
+            
+        
+
+        marker_32b2c61ed93601fd938999836e3d7312.bindPopup(popup_ac1bbc95b4c0df13abe97f12af2f700b)
+        ;
+
+        
+    
+    
+                marker_32b2c61ed93601fd938999836e3d7312.setIcon(icon_9b3879ed86db8fcc133fe3d1ac72a2be);
+            
+    
+            var marker_0fceeb7da4316ff459d899cda0bb5526 = L.marker(
+                [41.3167, -6.4],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_58f752519e2bf8fb75786d1765c44e60 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d9b3a533addd55279753ca41e79c5149 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_178c32660a0f55840a03fd0fe030a72c = $(`<div id="html_178c32660a0f55840a03fd0fe030a72c" style="width: 100.0%; height: 100.0%;">Fermoselle<br>Plaza Mayor, 1</div>`)[0];
+                popup_d9b3a533addd55279753ca41e79c5149.setContent(html_178c32660a0f55840a03fd0fe030a72c);
+            
+        
+
+        marker_0fceeb7da4316ff459d899cda0bb5526.bindPopup(popup_d9b3a533addd55279753ca41e79c5149)
+        ;
+
+        
+    
+    
+                marker_0fceeb7da4316ff459d899cda0bb5526.setIcon(icon_58f752519e2bf8fb75786d1765c44e60);
+            
+    
+            var marker_412c3da99245fcb3d8a5092e9fe2cd6e = L.marker(
+                [42.0131, -6.1831],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_b20168e4b1a6bde74587231f4b2f910a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e1ef4d9428f7672e9191ffa505d13228 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03a10de0b9a1854f12fe1fd4e4e0c3f0 = $(`<div id="html_03a10de0b9a1854f12fe1fd4e4e0c3f0" style="width: 100.0%; height: 100.0%;">Ferreras de Abajo<br>Plaza Evaristo García López, 1</div>`)[0];
+                popup_e1ef4d9428f7672e9191ffa505d13228.setContent(html_03a10de0b9a1854f12fe1fd4e4e0c3f0);
+            
+        
+
+        marker_412c3da99245fcb3d8a5092e9fe2cd6e.bindPopup(popup_e1ef4d9428f7672e9191ffa505d13228)
+        ;
+
+        
+    
+    
+                marker_412c3da99245fcb3d8a5092e9fe2cd6e.setIcon(icon_b20168e4b1a6bde74587231f4b2f910a);
+            
+    
+            var marker_60fcc96884d7744f6bc570d6fb00ac95 = L.marker(
+                [41.6667, -6.25],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_531d8c2e161ca34345cf0208d57363ef = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_675946417f358d5e14388f281bcb1224 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9a28905b6b61520b42b5f7cb4c84a205 = $(`<div id="html_9a28905b6b61520b42b5f7cb4c84a205" style="width: 100.0%; height: 100.0%;">Fonfría<br>Plaza Mayor, 1</div>`)[0];
+                popup_675946417f358d5e14388f281bcb1224.setContent(html_9a28905b6b61520b42b5f7cb4c84a205);
+            
+        
+
+        marker_60fcc96884d7744f6bc570d6fb00ac95.bindPopup(popup_675946417f358d5e14388f281bcb1224)
+        ;
+
+        
+    
+    
+                marker_60fcc96884d7744f6bc570d6fb00ac95.setIcon(icon_531d8c2e161ca34345cf0208d57363ef);
+            
+    
+            var marker_3d218fb9a03bb1e801e69f95f67840a6 = L.marker(
+                [41.5667, -5.6167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_d75b4d2701e9589f27851e1322ddad44 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13a550a839a463a01b80ec11e7452630 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b5bb363900751d44be450780bf6581c = $(`<div id="html_5b5bb363900751d44be450780bf6581c" style="width: 100.0%; height: 100.0%;">Fresno de la Ribera<br>Ctra. Tordesilla, 36</div>`)[0];
+                popup_13a550a839a463a01b80ec11e7452630.setContent(html_5b5bb363900751d44be450780bf6581c);
+            
+        
+
+        marker_3d218fb9a03bb1e801e69f95f67840a6.bindPopup(popup_13a550a839a463a01b80ec11e7452630)
+        ;
+
+        
+    
+    
+                marker_3d218fb9a03bb1e801e69f95f67840a6.setIcon(icon_d75b4d2701e9589f27851e1322ddad44);
+            
+    
+            var marker_a7fcb85c54433cdea45194c84c195c39 = L.marker(
+                [41.2461, -5.4861],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_9d6a0ff302516ccc461edaa50730535d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f2e4b1559f614ca158ee2b27fe90a619 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46828514ef7a10d46b4bb72f422c9148 = $(`<div id="html_46828514ef7a10d46b4bb72f422c9148" style="width: 100.0%; height: 100.0%;">Fuentelapeña<br>Plaza de la Constitución, 1</div>`)[0];
+                popup_f2e4b1559f614ca158ee2b27fe90a619.setContent(html_46828514ef7a10d46b4bb72f422c9148);
+            
+        
+
+        marker_a7fcb85c54433cdea45194c84c195c39.bindPopup(popup_f2e4b1559f614ca158ee2b27fe90a619)
+        ;
+
+        
+    
+    
+                marker_a7fcb85c54433cdea45194c84c195c39.setIcon(icon_9d6a0ff302516ccc461edaa50730535d);
+            
+    
+            var marker_9c60d5dd8b62b1c15c31e8d4afece8aa = L.marker(
+                [41.2572, -5.4922],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_ca8530ec32dc29e1a629086dfcd7c256 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_df946d479b0f7b1232ecba7fee161078 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5af60dbf4890d5c899b6d7e06b91359f = $(`<div id="html_5af60dbf4890d5c899b6d7e06b91359f" style="width: 100.0%; height: 100.0%;">Fuentesaúco<br>Plaza Mayor, 1</div>`)[0];
+                popup_df946d479b0f7b1232ecba7fee161078.setContent(html_5af60dbf4890d5c899b6d7e06b91359f);
+            
+        
+
+        marker_9c60d5dd8b62b1c15c31e8d4afece8aa.bindPopup(popup_df946d479b0f7b1232ecba7fee161078)
+        ;
+
+        
+    
+    
+                marker_9c60d5dd8b62b1c15c31e8d4afece8aa.setIcon(icon_ca8530ec32dc29e1a629086dfcd7c256);
+            
+    
+            var marker_e2918a4adec6b400a9c7cb30eba7ece3 = L.marker(
+                [41.3667, -5.6167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_c643295d088c5efeb4ce7a3d6fc16159 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b7495dcecd1a9e53d41ece3c7a118433 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dc924924d7f46e3cf47987e6717109f9 = $(`<div id="html_dc924924d7f46e3cf47987e6717109f9" style="width: 100.0%; height: 100.0%;">La Bóveda del Toro<br>Plaza Ayuntamiento, nan</div>`)[0];
+                popup_b7495dcecd1a9e53d41ece3c7a118433.setContent(html_dc924924d7f46e3cf47987e6717109f9);
+            
+        
+
+        marker_e2918a4adec6b400a9c7cb30eba7ece3.bindPopup(popup_b7495dcecd1a9e53d41ece3c7a118433)
+        ;
+
+        
+    
+    
+                marker_e2918a4adec6b400a9c7cb30eba7ece3.setIcon(icon_c643295d088c5efeb4ce7a3d6fc16159);
+            
+    
+            var marker_945d832291a793d55ca07ff8d147b69f = L.marker(
+                [42.0397, -6.9],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_36cabad51ca4857145dc88388e8e6f20 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5adc22c9fdf1e4a8bc0ea71ee8249adf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_df187dece30013c12f9bfffc1becc42f = $(`<div id="html_df187dece30013c12f9bfffc1becc42f" style="width: 100.0%; height: 100.0%;">Lubián<br>C/ Souto da Feria, 7</div>`)[0];
+                popup_5adc22c9fdf1e4a8bc0ea71ee8249adf.setContent(html_df187dece30013c12f9bfffc1becc42f);
+            
+        
+
+        marker_945d832291a793d55ca07ff8d147b69f.bindPopup(popup_5adc22c9fdf1e4a8bc0ea71ee8249adf)
+        ;
+
+        
+    
+    
+                marker_945d832291a793d55ca07ff8d147b69f.setIcon(icon_36cabad51ca4857145dc88388e8e6f20);
+            
+    
+            var marker_56fb20dd1563cf9d95d99540461a9b90 = L.marker(
+                [42.0333, -5.8833],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_a549732cb9dda24e086d8d064d9328c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7ceaa1e8cbdddc9aac604f86be342af6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6075aaf0acbdbb92b9c1d0c385ea8f21 = $(`<div id="html_6075aaf0acbdbb92b9c1d0c385ea8f21" style="width: 100.0%; height: 100.0%;">Manganeses de la Polvorosa<br>Plaza de la Iglesia, 3</div>`)[0];
+                popup_7ceaa1e8cbdddc9aac604f86be342af6.setContent(html_6075aaf0acbdbb92b9c1d0c385ea8f21);
+            
+        
+
+        marker_56fb20dd1563cf9d95d99540461a9b90.bindPopup(popup_7ceaa1e8cbdddc9aac604f86be342af6)
+        ;
+
+        
+    
+    
+                marker_56fb20dd1563cf9d95d99540461a9b90.setIcon(icon_a549732cb9dda24e086d8d064d9328c0);
+            
+    
+            var marker_de2f086fc3ca7416aa1f456672b9e33c = L.marker(
+                [41.6667, -5.8667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_9e83ec5433719bd12574efe06c34cee5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_398f1268dd07f533b6a9f7193ab6fab1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f51c7d1587653cdf5188382befdffa3 = $(`<div id="html_9f51c7d1587653cdf5188382befdffa3" style="width: 100.0%; height: 100.0%;">Montamarta<br>Plaza Mayor, 1</div>`)[0];
+                popup_398f1268dd07f533b6a9f7193ab6fab1.setContent(html_9f51c7d1587653cdf5188382befdffa3);
+            
+        
+
+        marker_de2f086fc3ca7416aa1f456672b9e33c.bindPopup(popup_398f1268dd07f533b6a9f7193ab6fab1)
+        ;
+
+        
+    
+    
+                marker_de2f086fc3ca7416aa1f456672b9e33c.setIcon(icon_9e83ec5433719bd12574efe06c34cee5);
+            
+    
+            var marker_0eaf4dd97b48e0aa78721b5560d3de5c = L.marker(
+                [41.4667, -5.6667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_dce51adc6efcd160620bf744ccd09661 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dbc7f48be51d418254dfdd1222550351 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb785ec8d9b9c79609cdc1c67805cd96 = $(`<div id="html_fb785ec8d9b9c79609cdc1c67805cd96" style="width: 100.0%; height: 100.0%;">Moraleja del Vino<br>Plaza Mayor, 1</div>`)[0];
+                popup_dbc7f48be51d418254dfdd1222550351.setContent(html_fb785ec8d9b9c79609cdc1c67805cd96);
+            
+        
+
+        marker_0eaf4dd97b48e0aa78721b5560d3de5c.bindPopup(popup_dbc7f48be51d418254dfdd1222550351)
+        ;
+
+        
+    
+    
+                marker_0eaf4dd97b48e0aa78721b5560d3de5c.setIcon(icon_dce51adc6efcd160620bf744ccd09661);
+            
+    
+            var marker_7307f9328d24a00e540482ee4df37cad = L.marker(
+                [41.5333, -5.4667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_e3e77a33ab20e7a3b7eb37f72613f0c2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a0af3c126d8dcca4962bbd5488cbaa8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_efd7c096967cb7ce85c89cda1b92be8b = $(`<div id="html_efd7c096967cb7ce85c89cda1b92be8b" style="width: 100.0%; height: 100.0%;">Morales del Toro<br>Plaza Mayor, 1</div>`)[0];
+                popup_3a0af3c126d8dcca4962bbd5488cbaa8.setContent(html_efd7c096967cb7ce85c89cda1b92be8b);
+            
+        
+
+        marker_7307f9328d24a00e540482ee4df37cad.bindPopup(popup_3a0af3c126d8dcca4962bbd5488cbaa8)
+        ;
+
+        
+    
+    
+                marker_7307f9328d24a00e540482ee4df37cad.setIcon(icon_e3e77a33ab20e7a3b7eb37f72613f0c2);
+            
+    
+            var marker_baf04e16df708ceef5b8d2986f7060bd = L.marker(
+                [41.4667, -5.6667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_9cd27eec5ff563bf883148488247ec0c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_05d89ccc36223550192c04758937c773 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_48f20aab0edd6bd685fa29403e953972 = $(`<div id="html_48f20aab0edd6bd685fa29403e953972" style="width: 100.0%; height: 100.0%;">Morales del Vino<br>Cortinal, 13</div>`)[0];
+                popup_05d89ccc36223550192c04758937c773.setContent(html_48f20aab0edd6bd685fa29403e953972);
+            
+        
+
+        marker_baf04e16df708ceef5b8d2986f7060bd.bindPopup(popup_05d89ccc36223550192c04758937c773)
+        ;
+
+        
+    
+    
+                marker_baf04e16df708ceef5b8d2986f7060bd.setIcon(icon_9cd27eec5ff563bf883148488247ec0c);
+            
+    
+            var marker_7dfbd824e7440426b5aff2ecf7e1bd78 = L.marker(
+                [41.3167, -6.2333],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_db777fbf1a19ddb972ae1ade21125e32 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_365a2f18d0d40a342ceec164333e7426 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43150bc66fc2e3c745b3924d1a710eb6 = $(`<div id="html_43150bc66fc2e3c745b3924d1a710eb6" style="width: 100.0%; height: 100.0%;">Moralina<br>Plaza Mayor, 1</div>`)[0];
+                popup_365a2f18d0d40a342ceec164333e7426.setContent(html_43150bc66fc2e3c745b3924d1a710eb6);
+            
+        
+
+        marker_7dfbd824e7440426b5aff2ecf7e1bd78.bindPopup(popup_365a2f18d0d40a342ceec164333e7426)
+        ;
+
+        
+    
+    
+                marker_7dfbd824e7440426b5aff2ecf7e1bd78.setIcon(icon_db777fbf1a19ddb972ae1ade21125e32);
+            
+    
+            var marker_c7454bba28f7b1be949fc81916466fb1 = L.marker(
+                [41.5833, -6.1333],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_ef5e12fdb8df700bc8a2377e18aacb4a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60a6caaaa59b838ff97e7c61afa00b30 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c2485e962ee7bbdcb1d7fb76554acb48 = $(`<div id="html_c2485e962ee7bbdcb1d7fb76554acb48" style="width: 100.0%; height: 100.0%;">Muelas del Pan<br>Plaza Ayuntamiento, s/n</div>`)[0];
+                popup_60a6caaaa59b838ff97e7c61afa00b30.setContent(html_c2485e962ee7bbdcb1d7fb76554acb48);
+            
+        
+
+        marker_c7454bba28f7b1be949fc81916466fb1.bindPopup(popup_60a6caaaa59b838ff97e7c61afa00b30)
+        ;
+
+        
+    
+    
+                marker_c7454bba28f7b1be949fc81916466fb1.setIcon(icon_ef5e12fdb8df700bc8a2377e18aacb4a);
+            
+    
+            var marker_e555bbf63573e4fcf5f7636717e5c1d1 = L.marker(
+                [41.5833, -5.8667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_9b317b18dad374f4dd4faf494811c9a7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e332dc75cba845d733d46a5072bb3f2b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1420e36ac79530759a834594639f2a06 = $(`<div id="html_1420e36ac79530759a834594639f2a06" style="width: 100.0%; height: 100.0%;">Palacios del Pan<br>Pza. Mayor, s/n</div>`)[0];
+                popup_e332dc75cba845d733d46a5072bb3f2b.setContent(html_1420e36ac79530759a834594639f2a06);
+            
+        
+
+        marker_e555bbf63573e4fcf5f7636717e5c1d1.bindPopup(popup_e332dc75cba845d733d46a5072bb3f2b)
+        ;
+
+        
+    
+    
+                marker_e555bbf63573e4fcf5f7636717e5c1d1.setIcon(icon_9b317b18dad374f4dd4faf494811c9a7);
+            
+    
+            var marker_d00a652baf5010f49dead3c0d20650d7 = L.marker(
+                [41.25, -5.9333],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_57cd3df545557d06aa8f637caccf0b24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_25b250b39adf5979c8f79069c4747cbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ffd47009cf484ae093fec784ffba9111 = $(`<div id="html_ffd47009cf484ae093fec784ffba9111" style="width: 100.0%; height: 100.0%;">Peñausende<br>C/El Piñeiro, 1</div>`)[0];
+                popup_25b250b39adf5979c8f79069c4747cbb.setContent(html_ffd47009cf484ae093fec784ffba9111);
+            
+        
+
+        marker_d00a652baf5010f49dead3c0d20650d7.bindPopup(popup_25b250b39adf5979c8f79069c4747cbb)
+        ;
+
+        
+    
+    
+                marker_d00a652baf5010f49dead3c0d20650d7.setIcon(icon_57cd3df545557d06aa8f637caccf0b24);
+            
+    
+            var marker_6bfd5b2c16f4518f149a55b8f8dc00ef = L.marker(
+                [41.4167, -5.8667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_b495a1e72b2cf4e7aafb075251c3067d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0820427bdccc9ea05527f165c5220e9d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90bdea83b4801e8b993c0b029fbc9896 = $(`<div id="html_90bdea83b4801e8b993c0b029fbc9896" style="width: 100.0%; height: 100.0%;">Pereruela<br>Pza. Mayor, 5</div>`)[0];
+                popup_0820427bdccc9ea05527f165c5220e9d.setContent(html_90bdea83b4801e8b993c0b029fbc9896);
+            
+        
+
+        marker_6bfd5b2c16f4518f149a55b8f8dc00ef.bindPopup(popup_0820427bdccc9ea05527f165c5220e9d)
+        ;
+
+        
+    
+    
+                marker_6bfd5b2c16f4518f149a55b8f8dc00ef.setIcon(icon_b495a1e72b2cf4e7aafb075251c3067d);
+            
+    
+            var marker_8d5b9a53a536d63200608ccddf5a9196 = L.marker(
+                [42.0556, -6.6333],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_09abf20edf7ac18f7ff37ce418712143 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_69189bbfce66f8af741598b6a23617b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb0ff90acc92dfe4e2b15020e9780d55 = $(`<div id="html_fb0ff90acc92dfe4e2b15020e9780d55" style="width: 100.0%; height: 100.0%;">Puebla de Sanabria<br>C/ Camino del Pinar, s/n</div>`)[0];
+                popup_69189bbfce66f8af741598b6a23617b5.setContent(html_fb0ff90acc92dfe4e2b15020e9780d55);
+            
+        
+
+        marker_8d5b9a53a536d63200608ccddf5a9196.bindPopup(popup_69189bbfce66f8af741598b6a23617b5)
+        ;
+
+        
+    
+    
+                marker_8d5b9a53a536d63200608ccddf5a9196.setIcon(icon_09abf20edf7ac18f7ff37ce418712143);
+            
+    
+            var marker_b4570f414f65f7e9e3b77c9397c137a4 = L.marker(
+                [41.7833, -6.25],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_0de758555e6b14af8476021a4e9c0665 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50e86d28495daaff8e52c92bbba0ef1b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c81f2bf26e67e84385ec68d9fa5e0fc = $(`<div id="html_9c81f2bf26e67e84385ec68d9fa5e0fc" style="width: 100.0%; height: 100.0%;">Rábanales<br>Plaza Iglesia, 1</div>`)[0];
+                popup_50e86d28495daaff8e52c92bbba0ef1b.setContent(html_9c81f2bf26e67e84385ec68d9fa5e0fc);
+            
+        
+
+        marker_b4570f414f65f7e9e3b77c9397c137a4.bindPopup(popup_50e86d28495daaff8e52c92bbba0ef1b)
+        ;
+
+        
+    
+    
+                marker_b4570f414f65f7e9e3b77c9397c137a4.setIcon(icon_0de758555e6b14af8476021a4e9c0665);
+            
+    
+            var marker_d5f3c52dfd95b12c7da4a0087263e47d = L.marker(
+                [41.7833, -6.3167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_d0a731ee5df32458bbd01465b1b8a008 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_741800449ce0d7f347aaf19daf048375 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1c9b96cf33c1f22c0c73a70d349227d7 = $(`<div id="html_1c9b96cf33c1f22c0c73a70d349227d7" style="width: 100.0%; height: 100.0%;">Riofrío de Aliste<br>C/ Fonda, 96</div>`)[0];
+                popup_741800449ce0d7f347aaf19daf048375.setContent(html_1c9b96cf33c1f22c0c73a70d349227d7);
+            
+        
+
+        marker_d5f3c52dfd95b12c7da4a0087263e47d.bindPopup(popup_741800449ce0d7f347aaf19daf048375)
+        ;
+
+        
+    
+    
+                marker_d5f3c52dfd95b12c7da4a0087263e47d.setIcon(icon_d0a731ee5df32458bbd01465b1b8a008);
+            
+    
+            var marker_0f87b2118896a6d92f2b3ba96de02ccc = L.marker(
+                [42.0481, -6.2431],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_ca997f576586da2a3d880900823ff599 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_291c910b916ea6b6801f668340b8fd9f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee3abeb5b163499da3472878314b37b5 = $(`<div id="html_ee3abeb5b163499da3472878314b37b5" style="width: 100.0%; height: 100.0%;">Rionegro del Puente<br>Plaza Diego de Losada, 19</div>`)[0];
+                popup_291c910b916ea6b6801f668340b8fd9f.setContent(html_ee3abeb5b163499da3472878314b37b5);
+            
+        
+
+        marker_0f87b2118896a6d92f2b3ba96de02ccc.bindPopup(popup_291c910b916ea6b6801f668340b8fd9f)
+        ;
+
+        
+    
+    
+                marker_0f87b2118896a6d92f2b3ba96de02ccc.setIcon(icon_ca997f576586da2a3d880900823ff599);
+            
+    
+            var marker_35d596425d4f6a43e63818e106caac05 = L.marker(
+                [41.5333, -5.7333],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_61ca2a584253c5477ba03944684ba841 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_61ad551dde93511c6cc27a6464f7f1ff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4317c184d39986d72430ca93f2da3962 = $(`<div id="html_4317c184d39986d72430ca93f2da3962" style="width: 100.0%; height: 100.0%;">Roales<br>Plaza del Ayuntamiento, s/n</div>`)[0];
+                popup_61ad551dde93511c6cc27a6464f7f1ff.setContent(html_4317c184d39986d72430ca93f2da3962);
+            
+        
+
+        marker_35d596425d4f6a43e63818e106caac05.bindPopup(popup_61ad551dde93511c6cc27a6464f7f1ff)
+        ;
+
+        
+    
+    
+                marker_35d596425d4f6a43e63818e106caac05.setIcon(icon_61ca2a584253c5477ba03944684ba841);
+            
+    
+            var marker_a2c5e80ec49410046f53f485d49f36dd = L.marker(
+                [41.7167, -5.8667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_1f499211d1b08c3edcd5727c2081586d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad1b344614e060fc24f5702f8b0a0a6e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e4d9b1d693fa45a21dae60b0b3b45e6c = $(`<div id="html_e4d9b1d693fa45a21dae60b0b3b45e6c" style="width: 100.0%; height: 100.0%;">San Cebrián de Castro<br>Calle Medio, 2</div>`)[0];
+                popup_ad1b344614e060fc24f5702f8b0a0a6e.setContent(html_e4d9b1d693fa45a21dae60b0b3b45e6c);
+            
+        
+
+        marker_a2c5e80ec49410046f53f485d49f36dd.bindPopup(popup_ad1b344614e060fc24f5702f8b0a0a6e)
+        ;
+
+        
+    
+    
+                marker_a2c5e80ec49410046f53f485d49f36dd.setIcon(icon_1f499211d1b08c3edcd5727c2081586d);
+            
+    
+            var marker_3e3a09f925d42e2e80f8ba8a1756e1bc = L.marker(
+                [42.0167, -5.6667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_1e2d0e4f75caacecabcd82596eb4237b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0bfe06f6553bb8d90f9b9de6af69ee80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e5ac96192bf4f0beb5cbedc5d10ee9d7 = $(`<div id="html_e5ac96192bf4f0beb5cbedc5d10ee9d7" style="width: 100.0%; height: 100.0%;">San Cristobal de Entreviñas<br>Plaza Mayor, s/n</div>`)[0];
+                popup_0bfe06f6553bb8d90f9b9de6af69ee80.setContent(html_e5ac96192bf4f0beb5cbedc5d10ee9d7);
+            
+        
+
+        marker_3e3a09f925d42e2e80f8ba8a1756e1bc.bindPopup(popup_0bfe06f6553bb8d90f9b9de6af69ee80)
+        ;
+
+        
+    
+    
+                marker_3e3a09f925d42e2e80f8ba8a1756e1bc.setIcon(icon_1e2d0e4f75caacecabcd82596eb4237b);
+            
+    
+            var marker_8e8a48eead61260117a1f98fa141217c = L.marker(
+                [41.8167, -6.3167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_e7be7c730773ba41b0aa7e386ff872a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c0d02fd7c6db71a8bfcd995f32e5a095 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be02a84b7985b6f5dc323e79b39d5f67 = $(`<div id="html_be02a84b7985b6f5dc323e79b39d5f67" style="width: 100.0%; height: 100.0%;">San Vitero<br>Plaza Mayor, 2</div>`)[0];
+                popup_c0d02fd7c6db71a8bfcd995f32e5a095.setContent(html_be02a84b7985b6f5dc323e79b39d5f67);
+            
+        
+
+        marker_8e8a48eead61260117a1f98fa141217c.bindPopup(popup_c0d02fd7c6db71a8bfcd995f32e5a095)
+        ;
+
+        
+    
+    
+                marker_8e8a48eead61260117a1f98fa141217c.setIcon(icon_e7be7c730773ba41b0aa7e386ff872a4);
+            
+    
+            var marker_db807ebc3b29a889ef888942b511a0fa = L.marker(
+                [42.0167, -5.6833],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_42df1f623d88133e40ef8913e81a2059 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_125fd09a3c8d462c0f3b1ba629a36913 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91e2108c53d01e79b77d8bda02e5ebf5 = $(`<div id="html_91e2108c53d01e79b77d8bda02e5ebf5" style="width: 100.0%; height: 100.0%;">Santa Cristina de la Polvorosa<br>Plaza Mayor, s/n</div>`)[0];
+                popup_125fd09a3c8d462c0f3b1ba629a36913.setContent(html_91e2108c53d01e79b77d8bda02e5ebf5);
+            
+        
+
+        marker_db807ebc3b29a889ef888942b511a0fa.bindPopup(popup_125fd09a3c8d462c0f3b1ba629a36913)
+        ;
+
+        
+    
+    
+                marker_db807ebc3b29a889ef888942b511a0fa.setIcon(icon_42df1f623d88133e40ef8913e81a2059);
+            
+    
+            var marker_42c51d92801371188fcf1b983a84b745 = L.marker(
+                [42.0833, -6.1],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_ba8c1b3685dfa8f042db997765ad7f8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a0bb74f628745cf0fecb1b5bcfeb552b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bb3e559339cc28a5caaa3ff5cf9889ec = $(`<div id="html_bb3e559339cc28a5caaa3ff5cf9889ec" style="width: 100.0%; height: 100.0%;">Santibañez de Vidriales<br>C/ Mayor, 27</div>`)[0];
+                popup_a0bb74f628745cf0fecb1b5bcfeb552b.setContent(html_bb3e559339cc28a5caaa3ff5cf9889ec);
+            
+        
+
+        marker_42c51d92801371188fcf1b983a84b745.bindPopup(popup_a0bb74f628745cf0fecb1b5bcfeb552b)
+        ;
+
+        
+    
+    
+                marker_42c51d92801371188fcf1b983a84b745.setIcon(icon_ba8c1b3685dfa8f042db997765ad7f8b);
+            
+    
+            var marker_f210a97d2e09376e7063f027ff638c77 = L.marker(
+                [41.6167, -5.6167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_93677f20a09326a9b19b1d42d76f5cad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e68704d652ef17d916e681023db27faf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2746cd29d8fe2e2406022905c1deb09 = $(`<div id="html_a2746cd29d8fe2e2406022905c1deb09" style="width: 100.0%; height: 100.0%;">Santovenia<br>Plaza España, s/n</div>`)[0];
+                popup_e68704d652ef17d916e681023db27faf.setContent(html_a2746cd29d8fe2e2406022905c1deb09);
+            
+        
+
+        marker_f210a97d2e09376e7063f027ff638c77.bindPopup(popup_e68704d652ef17d916e681023db27faf)
+        ;
+
+        
+    
+    
+                marker_f210a97d2e09376e7063f027ff638c77.setIcon(icon_93677f20a09326a9b19b1d42d76f5cad);
+            
+    
+            var marker_8683be5277a5424d4809df9722594bdc = L.marker(
+                [41.8236, -5.9597],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_6fa616b257b489ebc84254e96ae41ab8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a76889ac249d71af9aaebf8ec3fe035 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_219323f8b371903afcfc4c6431aeb430 = $(`<div id="html_219323f8b371903afcfc4c6431aeb430" style="width: 100.0%; height: 100.0%;">Tábara<br>Plaza Mayor, 2</div>`)[0];
+                popup_3a76889ac249d71af9aaebf8ec3fe035.setContent(html_219323f8b371903afcfc4c6431aeb430);
+            
+        
+
+        marker_8683be5277a5424d4809df9722594bdc.bindPopup(popup_3a76889ac249d71af9aaebf8ec3fe035)
+        ;
+
+        
+    
+    
+                marker_8683be5277a5424d4809df9722594bdc.setIcon(icon_6fa616b257b489ebc84254e96ae41ab8);
+            
+    
+            var marker_73d0f61b0fed37cbf07629b787dd8ea9 = L.marker(
+                [41.5241, -5.3956],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_c495aad8a799f7d4b7e8fc57a8274690 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f31002d63459a40cee7bd0854b569212 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5a4bf3de41962d06dbdaad345d526903 = $(`<div id="html_5a4bf3de41962d06dbdaad345d526903" style="width: 100.0%; height: 100.0%;">Toro<br>Calle Concepción, 3</div>`)[0];
+                popup_f31002d63459a40cee7bd0854b569212.setContent(html_5a4bf3de41962d06dbdaad345d526903);
+            
+        
+
+        marker_73d0f61b0fed37cbf07629b787dd8ea9.bindPopup(popup_f31002d63459a40cee7bd0854b569212)
+        ;
+
+        
+    
+    
+                marker_73d0f61b0fed37cbf07629b787dd8ea9.setIcon(icon_c495aad8a799f7d4b7e8fc57a8274690);
+            
+    
+            var marker_49e76594f1bb46cfd14b07266c6b343d = L.marker(
+                [41.4167, -5.5333],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_faebd22ad23fe2e5ef309b586d58cdfe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bf7176f25ac8a1eb47e1aa5809cfb523 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c2a938439edd2f667c5ee1953118a01 = $(`<div id="html_7c2a938439edd2f667c5ee1953118a01" style="width: 100.0%; height: 100.0%;">Venialbo<br>Plaza Mayor, 1</div>`)[0];
+                popup_bf7176f25ac8a1eb47e1aa5809cfb523.setContent(html_7c2a938439edd2f667c5ee1953118a01);
+            
+        
+
+        marker_49e76594f1bb46cfd14b07266c6b343d.bindPopup(popup_bf7176f25ac8a1eb47e1aa5809cfb523)
+        ;
+
+        
+    
+    
+                marker_49e76594f1bb46cfd14b07266c6b343d.setIcon(icon_faebd22ad23fe2e5ef309b586d58cdfe);
+            
+    
+            var marker_9d50d1126ecdef27ab7b0e42f1fb2322 = L.marker(
+                [41.7167, -5.6167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_b12af08b36c1159c28c3a696243bca5b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_640a9c3aea92f4cfd647a4271e5948b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7f3f1217c3f249b2ea502f24ca237ac = $(`<div id="html_e7f3f1217c3f249b2ea502f24ca237ac" style="width: 100.0%; height: 100.0%;">Vezdemarban<br>Plaza Mayor, s/n</div>`)[0];
+                popup_640a9c3aea92f4cfd647a4271e5948b4.setContent(html_e7f3f1217c3f249b2ea502f24ca237ac);
+            
+        
+
+        marker_9d50d1126ecdef27ab7b0e42f1fb2322.bindPopup(popup_640a9c3aea92f4cfd647a4271e5948b4)
+        ;
+
+        
+    
+    
+                marker_9d50d1126ecdef27ab7b0e42f1fb2322.setIcon(icon_b12af08b36c1159c28c3a696243bca5b);
+            
+    
+            var marker_be109fff057a760d7b600788cdf54671 = L.marker(
+                [41.8667, -5.7833],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_560913d2c3f5b6350ba3361aa05c63b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_963460f4fe6d1257a70a693103333bd2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f5ef6b3e1f9f133a3b5c3598be5086d4 = $(`<div id="html_f5ef6b3e1f9f133a3b5c3598be5086d4" style="width: 100.0%; height: 100.0%;">Villabuena del Puente<br>Plaza Castilla y León, 1</div>`)[0];
+                popup_963460f4fe6d1257a70a693103333bd2.setContent(html_f5ef6b3e1f9f133a3b5c3598be5086d4);
+            
+        
+
+        marker_be109fff057a760d7b600788cdf54671.bindPopup(popup_963460f4fe6d1257a70a693103333bd2)
+        ;
+
+        
+    
+    
+                marker_be109fff057a760d7b600788cdf54671.setIcon(icon_560913d2c3f5b6350ba3361aa05c63b9);
+            
+    
+            var marker_4984cca771a07c19e62fa39f51bce479 = L.marker(
+                [41.8425, -5.6217],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_b84abf51b956e4171a9aa56e11d96edf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57b1a321416833b20bafbdc7a4f2f70b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3feffc876b24f82f10e0d678d254dc7 = $(`<div id="html_c3feffc876b24f82f10e0d678d254dc7" style="width: 100.0%; height: 100.0%;">Villafáfila<br>Pza. Sanjurjo, 6</div>`)[0];
+                popup_57b1a321416833b20bafbdc7a4f2f70b.setContent(html_c3feffc876b24f82f10e0d678d254dc7);
+            
+        
+
+        marker_4984cca771a07c19e62fa39f51bce479.bindPopup(popup_57b1a321416833b20bafbdc7a4f2f70b)
+        ;
+
+        
+    
+    
+                marker_4984cca771a07c19e62fa39f51bce479.setIcon(icon_b84abf51b956e4171a9aa56e11d96edf);
+            
+    
+            var marker_9274f61b539007b0ded88b446fb12817 = L.marker(
+                [41.4667, -5.6167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_b738d775216a6f233510f75c70962c23 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6865c916791f5861668fee47ee60a89d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_190c152c25b72322828e700b81c1a70e = $(`<div id="html_190c152c25b72322828e700b81c1a70e" style="width: 100.0%; height: 100.0%;">Villalazán<br>C/ Toro, 2</div>`)[0];
+                popup_6865c916791f5861668fee47ee60a89d.setContent(html_190c152c25b72322828e700b81c1a70e);
+            
+        
+
+        marker_9274f61b539007b0ded88b446fb12817.bindPopup(popup_6865c916791f5861668fee47ee60a89d)
+        ;
+
+        
+    
+    
+                marker_9274f61b539007b0ded88b446fb12817.setIcon(icon_b738d775216a6f233510f75c70962c23);
+            
+    
+            var marker_c4e05283070263fe846466e0bfcac7da = L.marker(
+                [41.8667, -5.4167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_ef10b6b81b01adeadf227b5e8efd386a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f5e7347948e835d7e0461df6c664b72 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e11389ba4f6878d8916046b413eda2ea = $(`<div id="html_e11389ba4f6878d8916046b413eda2ea" style="width: 100.0%; height: 100.0%;">Villalpando<br>Plaza Mayor, s/n</div>`)[0];
+                popup_5f5e7347948e835d7e0461df6c664b72.setContent(html_e11389ba4f6878d8916046b413eda2ea);
+            
+        
+
+        marker_c4e05283070263fe846466e0bfcac7da.bindPopup(popup_5f5e7347948e835d7e0461df6c664b72)
+        ;
+
+        
+    
+    
+                marker_c4e05283070263fe846466e0bfcac7da.setIcon(icon_ef10b6b81b01adeadf227b5e8efd386a);
+            
+    
+            var marker_8808f28cc1cb28450074a440f67bacb0 = L.marker(
+                [41.25, -5.6167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_5685b6d20f2ee074affdffc4bf8020ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5b0e8d2e06933d6f29d5bb9dd8c7670b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5aa8607cf11afc204bcd151b190ba6e = $(`<div id="html_a5aa8607cf11afc204bcd151b190ba6e" style="width: 100.0%; height: 100.0%;">Villamor de los Escuderos<br>Plaza Mayor, 1</div>`)[0];
+                popup_5b0e8d2e06933d6f29d5bb9dd8c7670b.setContent(html_a5aa8607cf11afc204bcd151b190ba6e);
+            
+        
+
+        marker_8808f28cc1cb28450074a440f67bacb0.bindPopup(popup_5b0e8d2e06933d6f29d5bb9dd8c7670b)
+        ;
+
+        
+    
+    
+                marker_8808f28cc1cb28450074a440f67bacb0.setIcon(icon_5685b6d20f2ee074affdffc4bf8020ce);
+            
+    
+            var marker_70d7abf377476b4c5df6fad2922744a1 = L.marker(
+                [41.8833, -5.6167],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_7d31d790e662e77eeec62f27ef3400bf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12bd9eede5d1856a153686ae908b0b0b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_829682ddc9422d4a7c7fe78b4b10e2ca = $(`<div id="html_829682ddc9422d4a7c7fe78b4b10e2ca" style="width: 100.0%; height: 100.0%;">Villanueva del Campo<br>Plaza España, s/n</div>`)[0];
+                popup_12bd9eede5d1856a153686ae908b0b0b.setContent(html_829682ddc9422d4a7c7fe78b4b10e2ca);
+            
+        
+
+        marker_70d7abf377476b4c5df6fad2922744a1.bindPopup(popup_12bd9eede5d1856a153686ae908b0b0b)
+        ;
+
+        
+    
+    
+                marker_70d7abf377476b4c5df6fad2922744a1.setIcon(icon_7d31d790e662e77eeec62f27ef3400bf);
+            
+    
+            var marker_8e8a2ff9739d3ce130b5f0c52be1b3b4 = L.marker(
+                [41.3333, -6.1833],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_d682c55dbf2f058191d14169ddd867f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fe8848efe53e7c32ef6c78556f178bc5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9b0f6bc7d75309ba65156442f0ae68b9 = $(`<div id="html_9b0f6bc7d75309ba65156442f0ae68b9" style="width: 100.0%; height: 100.0%;">Villar del Buey<br>Plaza Mayor, 6</div>`)[0];
+                popup_fe8848efe53e7c32ef6c78556f178bc5.setContent(html_9b0f6bc7d75309ba65156442f0ae68b9);
+            
+        
+
+        marker_8e8a2ff9739d3ce130b5f0c52be1b3b4.bindPopup(popup_fe8848efe53e7c32ef6c78556f178bc5)
+        ;
+
+        
+    
+    
+                marker_8e8a2ff9739d3ce130b5f0c52be1b3b4.setIcon(icon_d682c55dbf2f058191d14169ddd867f4);
+            
+    
+            var marker_78347d860e23d9207fb639f4a36c2895 = L.marker(
+                [41.5167, -5.6667],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_f3b6c00363505fd2baa4aba9857982f8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6f13fb490c5b4a6cc9fb5de842a98804 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e70b00b2be0d632a701f12e3290859a = $(`<div id="html_4e70b00b2be0d632a701f12e3290859a" style="width: 100.0%; height: 100.0%;">Villaralbo<br>Pl. Amílcar Ferrón, 1</div>`)[0];
+                popup_6f13fb490c5b4a6cc9fb5de842a98804.setContent(html_4e70b00b2be0d632a701f12e3290859a);
+            
+        
+
+        marker_78347d860e23d9207fb639f4a36c2895.bindPopup(popup_6f13fb490c5b4a6cc9fb5de842a98804)
+        ;
+
+        
+    
+    
+                marker_78347d860e23d9207fb639f4a36c2895.setIcon(icon_f3b6c00363505fd2baa4aba9857982f8);
+            
+    
+            var marker_479a6da07b1a6d9367708013a7340bbe = L.marker(
+                [42.0667, -6.35],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_9fdfe72b81114a78510f98c1121a45a0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fa6a35ec75c9cbb76e4824932d76e2bd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e773a9f5a5e0ea752f615abc69692b04 = $(`<div id="html_e773a9f5a5e0ea752f615abc69692b04" style="width: 100.0%; height: 100.0%;">Villardeciervos<br>Antigua sala de votaciones, nan</div>`)[0];
+                popup_fa6a35ec75c9cbb76e4824932d76e2bd.setContent(html_e773a9f5a5e0ea752f615abc69692b04);
+            
+        
+
+        marker_479a6da07b1a6d9367708013a7340bbe.bindPopup(popup_fa6a35ec75c9cbb76e4824932d76e2bd)
+        ;
+
+        
+    
+    
+                marker_479a6da07b1a6d9367708013a7340bbe.setIcon(icon_9fdfe72b81114a78510f98c1121a45a0);
+            
+    
+            var marker_f36bb05249124eb85ea6e4e362dbdafd = L.marker(
+                [41.5031, -5.746],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_fd7296869c31af5ea00d47bf854f441e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_801dfe55806ca4b1eb375a757e8c98cf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad5ea545e0887e5c84830df4b7b33f0a = $(`<div id="html_ad5ea545e0887e5c84830df4b7b33f0a" style="width: 100.0%; height: 100.0%;">Zamora<br>Plaza Viriato, s/n</div>`)[0];
+                popup_801dfe55806ca4b1eb375a757e8c98cf.setContent(html_ad5ea545e0887e5c84830df4b7b33f0a);
+            
+        
+
+        marker_f36bb05249124eb85ea6e4e362dbdafd.bindPopup(popup_801dfe55806ca4b1eb375a757e8c98cf)
+        ;
+
+        
+    
+    
+                marker_f36bb05249124eb85ea6e4e362dbdafd.setIcon(icon_fd7296869c31af5ea00d47bf854f441e);
+            
+    
+            var marker_a35e12513a6152744591dd0ba026abb1 = L.marker(
+                [41.5031, -5.746],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_3da45c99f1d02a9e77f6080a9ebde351 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_14c5b8c371903c1239e735f1de93330c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6cbcf181924e339eb2f863df115001c5 = $(`<div id="html_6cbcf181924e339eb2f863df115001c5" style="width: 100.0%; height: 100.0%;">Zamora<br>C/ Condes de Alba y Aliste, 2-4</div>`)[0];
+                popup_14c5b8c371903c1239e735f1de93330c.setContent(html_6cbcf181924e339eb2f863df115001c5);
+            
+        
+
+        marker_a35e12513a6152744591dd0ba026abb1.bindPopup(popup_14c5b8c371903c1239e735f1de93330c)
+        ;
+
+        
+    
+    
+                marker_a35e12513a6152744591dd0ba026abb1.setIcon(icon_3da45c99f1d02a9e77f6080a9ebde351);
+            
+    
+            var marker_d6594b47485bc4e40526f7deded370e9 = L.marker(
+                [41.5031, -5.746],
+                {
+}
+            ).addTo(map_bed31c87c37a13319f40b57c4257fbfa);
+        
+    
+            var icon_4dd3e00c714340ed558cdd1a33314f4e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6baf2ede6b744a9b1933543e900cf206 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a7d2961340e7239a8688805ae138808 = $(`<div id="html_1a7d2961340e7239a8688805ae138808" style="width: 100.0%; height: 100.0%;">Zamora<br>C/ Pinar, 7</div>`)[0];
+                popup_6baf2ede6b744a9b1933543e900cf206.setContent(html_1a7d2961340e7239a8688805ae138808);
+            
+        
+
+        marker_d6594b47485bc4e40526f7deded370e9.bindPopup(popup_6baf2ede6b744a9b1933543e900cf206)
+        ;
+
+        
+    
+    
+                marker_d6594b47485bc4e40526f7deded370e9.setIcon(icon_4dd3e00c714340ed558cdd1a33314f4e);
+            
+</script>
+</html>
