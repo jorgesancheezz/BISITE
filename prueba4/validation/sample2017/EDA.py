@@ -59,13 +59,13 @@ for rec in records:
         }])
         eda_df = pd.concat([eda_df, new_row], ignore_index=True)
 
-        # Graficar primera señal con picos R (primeras 2000 muestras)
+        # Graficar primera señal con picos R (primeras 6000 muestras)
         plt.figure(figsize=(12,4))
-        plt.plot(signal[:2000], label="ECG")
+        plt.plot(signal[:6000], label="ECG")
         r_peaks = ecg_peaks["ECG_R_Peaks"]
-        r_peaks_in_window = r_peaks[r_peaks < 2000]  # solo las que están en las primeras 2000 muestras
+        r_peaks_in_window = r_peaks[r_peaks < 6000]  # solo las que están en las primeras 6000 muestras
         plt.scatter(r_peaks_in_window, signal[r_peaks_in_window], color='red', marker='x', label='R Peaks')
-        plt.title(f"Registro {rec} - primeras 2000 muestras")
+        plt.title(f"Registro {rec} - primeras 6000 muestras")
         plt.xlabel("Muestra")
         plt.ylabel("Amplitud")
         plt.legend()
