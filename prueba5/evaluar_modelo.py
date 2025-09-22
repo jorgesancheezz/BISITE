@@ -23,7 +23,7 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
         'asbestos_exposure': {'No': 0, 'Yes': 1},
         'secondhand_smoke_exposure': {'No': 0, 'Yes': 1},
         'lung_cancer': {'No': 0, 'Yes': 1},
-        'alcohol_consumption': {'None': 0, 'Moderate': 1, 'Heavy': 2},
+        'alcohol_consumption': { 'Moderate': 0, 'Heavy': 1},
         'radon_exposure': {'Low': 0, 'Medium': 1, 'High': 2},
     }
 
@@ -96,7 +96,7 @@ def main():
         report = classification_report(y_true, y_pred)
 
         with open(metrics_txt_path, 'w', encoding='utf-8') as f:
-            f.write('=== Evaluación del modelo ===\n')
+            f.write('Evaluación del modelo\n')
             f.write(f'Accuracy: {acc:.4f}\n')
             f.write(f'ROC AUC: {auc:.4f}\n')
             f.write('\n')
@@ -125,7 +125,5 @@ def main():
     out_csv = os.path.join(args.outdir, 'predicciones.csv')
     out_pred.to_csv(out_csv, index=False)
     print(f"Predicciones guardadas en: {out_csv}")
-
-
 if __name__ == '__main__':
     main()
