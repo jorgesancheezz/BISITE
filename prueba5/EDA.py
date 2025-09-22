@@ -11,61 +11,88 @@ os.makedirs(output_folder, exist_ok=True)
 # --- Leer CSV ---
 df = pd.read_csv(data_path)
 
-# --- Codificar variables categóricas binarias ---
-df['gender'] = df['gender'].map({'Male': 0, 'Female': 1})
-df['family_history'] = df['family_history'].map({'No':0, 'Yes':1})
-df['copd_diagnosis'] = df['copd_diagnosis'].map({'No':0, 'Yes':1})
-df['asbestos_exposure'] = df['asbestos_exposure'].map({'No':0, 'Yes':1})
-df['secondhand_smoke_exposure'] = df['secondhand_smoke_exposure'].map({'No':0, 'Yes':1})
-df['lung_cancer'] = df['lung_cancer'].map({'No':0, 'Yes':1})
-
-# --- Codificar alcohol_consumption ---
-# None=0, Moderate=1, Heavy=2
-df['alcohol_consumption'] = df['alcohol_consumption'].map({'None':0, 'Moderate':1, 'Heavy':2})
-
 # --- Variables categóricas a analizar ---
 categorical_vars = ['gender','copd_diagnosis','alcohol_consumption',
                     'family_history','asbestos_exposure','secondhand_smoke_exposure']
 
-# --- Generar tablas y gráficos ---
-for col in categorical_vars:
-    # Tabla de frecuencias
-    freq_table = df[col].value_counts().reset_index()
-    freq_table.columns = [col, 'count']
-    freq_table['percentage'] = (freq_table['count'] / freq_table['count'].sum() * 100).round(2)
-    
-    # Distribución según lung_cancer
-    lung_table = pd.crosstab(df[col], df['lung_cancer'], normalize='index') * 100
-    lung_table = lung_table.rename(columns={0:'No Cancer %', 1:'Cancer %'}).round(2)
-    
-    # Combinar tablas
-    freq_table = freq_table.merge(lung_table, left_on=col, right_index=True)
-    
-    # Mostrar tabla por pantalla
-    print(f"\nTabla de frecuencias para {col}:")
-    print(freq_table)
-    
-    # Guardar CSV
-    csv_path = os.path.join(output_folder, f"{col}_frequency_table.csv")
-    freq_table.to_csv(csv_path, index=False)
-    
-    # --- Gráfico de barras simple (proporción total) ---
-    plt.figure(figsize=(5,4))
-    sns.barplot(x=freq_table[col], y=freq_table['percentage'], palette='Set2')
-    plt.ylabel("Porcentaje total (%)")
-    plt.title(f"{col} - Porcentaje total")
-    plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f"{col}_bar_total.png"))
-    plt.close()
-    
-    # --- Stacked bar plot (proporción de lung_cancer por categoría) ---
-    plt.figure(figsize=(5,4))
-    lung_table.plot(kind='bar', stacked=True, colormap='coolwarm', width=0.6)
-    plt.ylabel("Porcentaje dentro de la categoría (%)")
-    plt.title(f"{col} - Distribución de Lung Cancer")
-    plt.legend(title='Lung Cancer', labels=['No', 'Yes'])
-    plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f"{col}_stacked_lung_cancer.png"))
-    plt.close()
 
-print(f"\nTodas las tablas y gráficos se han guardado en '{output_folder}'.")
+plt.figure(figsize=(6,4))
+sns.histplot(df['age'], kde=True, bins=20)
+plt.title("Age Distribution")
+plt.savefig(os.path.join(output_folder, "age_distribution.png"))
+
+plt.figure(figsize=(6,4))
+sns.boxplot(x="lung_cancer", y="age", data=df)
+plt.title("Age vs Lung Cancer")
+plt.savefig(os.path.join(output_folder, "age_vs_lung_cancer.png"))
+
+plt.figure(figsize=(5,4))
+sns.countplot(x="gender", data=df)
+plt.title("Gender Distribution")
+plt.savefig(os.path.join(output_folder, "gender_distribution.png"))
+
+plt.figure(figsize=(6,4))
+sns.countplot(x="gender", hue="lung_cancer", data=df)
+plt.title("Gender vs Lung Cancer")
+plt.savefig(os.path.join(output_folder, "gender_vs_lung_cancer.png"))
+
+plt.figure(figsize=(6,4))
+sns.histplot(df['pack_years'], kde=True, bins=20)
+plt.title("Pack Years (Smoking Intensity)")
+plt.savefig(os.path.join(output_folder, "pack_years_distribution.png"))
+
+plt.figure(figsize=(6,4))
+sns.boxplot(x="lung_cancer", y="pack_years", data=df)
+plt.title("Pack Years vs Lung Cancer")
+plt.savefig(os.path.join(output_folder, "pack_years_vs_lung_cancer.png"))
+
+plt.figure(figsize=(6,4))
+sns.scatterplot(x="age", y="pack_years", hue="lung_cancer", data=df)
+plt.title("Age vs Pack Years (Colored by Lung Cancer)")
+plt.savefig(os.path.join(output_folder, "age_vs_pack_years.png"))
+
+plt.figure(figsize=(6,4))
+sns.countplot(x="alcohol_consumption", data=df)
+plt.title("Alcohol Consumption Distribution")
+plt.savefig(os.path.join(output_folder, "alcohol_consumption_distribution.png"))
+
+plt.figure(figsize=(6,4))
+sns.countplot(x="alcohol_consumption", hue="lung_cancer", data=df)
+plt.title("Alcohol Consumption vs Lung Cancer")
+plt.savefig(os.path.join(output_folder, "alcohol_consumption_vs_lung_cancer.png"))
+
+plt.figure(figsize=(6,4))
+sns.countplot(x="secondhand_smoke_exposure", data=df)
+plt.title("Secondhand Smoke Exposure Distribution")
+plt.savefig(os.path.join(output_folder, "secondhand_smoke_exposure_distribution.png"))
+
+plt.figure(figsize=(6,4))
+sns.countplot(x="secondhand_smoke_exposure", hue="lung_cancer", data=df)
+plt.title("Secondhand Smoke Exposure vs Lung Cancer")
+plt.savefig(os.path.join(output_folder, "secondhand_smoke_exposure_vs_lung_cancer.png"))
+
+plt.figure(figsize=(6,4))
+sns.countplot(x="radon_exposure", hue="lung_cancer", data=df)
+plt.title("Radon Exposure vs Lung Cancer")
+plt.savefig(os.path.join(output_folder, "radon_exposure_vs_lung_cancer.png"))
+
+plt.figure(figsize=(6,4))
+sns.countplot(x="asbestos_exposure", hue="lung_cancer", data=df)
+plt.title("Asbestos Exposure vs Lung Cancer")
+plt.savefig(os.path.join(output_folder, "asbestos_exposure_vs_lung_cancer.png"))
+
+plt.figure(figsize=(6,4))
+sns.countplot(x="copd_diagnosis", hue="lung_cancer", data=df)
+plt.title("COPD Diagnosis vs Lung Cancer")
+plt.savefig(os.path.join(output_folder, "copd_diagnosis_vs_lung_cancer.png"))
+
+plt.figure(figsize=(6,4))
+sns.countplot(x="family_history", hue="lung_cancer", data=df)
+plt.title("Family History vs Lung Cancer")
+plt.savefig(os.path.join(output_folder, "family_history_vs_lung_cancer.png"))
+
+plt.figure(figsize=(5,5))
+df['lung_cancer'].value_counts().plot.pie(autopct='%1.1f%%', startangle=90, shadow=True)
+plt.title("Lung Cancer Cases Distribution")
+plt.ylabel("")
+plt.savefig(os.path.join(output_folder, "lung_cancer_cases_distribution.png"))

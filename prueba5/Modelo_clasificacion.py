@@ -6,6 +6,14 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score, roc_auc_score, classification_report
 import shap
 import matplotlib.pyplot as plt
+import os
+import numpy as np
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+
+# Crear carpeta para guardar resultados
+output_folder = "resultados_modelo"
+os.makedirs(output_folder, exist_ok=True)
 
 # -----------------------------
 # 1️⃣ Cargar y preparar los datos
@@ -13,6 +21,8 @@ import matplotlib.pyplot as plt
 data_path = "C:\\Users\\BISITE-NEL\\Desktop\\pruebas\\prueba5\\lung_cancer_dataset.csv"
 df = pd.read_csv(data_path)
 
+if df['alcohol_consumption'].isnull().sum() > 0:
+    df['alcohol_consumption'] = df['alcohol_consumption'].fillna('Unknown')
 # Codificar variables categóricas
 df['gender'] = df['gender'].map({'Male':0,'Female':1})
 df['family_history'] = df['family_history'].map({'No':0,'Yes':1})
@@ -23,8 +33,16 @@ df['lung_cancer'] = df['lung_cancer'].map({'No':0,'Yes':1})
 df['alcohol_consumption'] = df['alcohol_consumption'].map({'None':0,'Moderate':1,'Heavy':2})
 df['radon_exposure'] = df['radon_exposure'].map({'Low':0,'Medium':1,'High':2})
 
-# Crear un 'risk_score' combinando factores de riesgo numéricos y categóricos
-df['risk_score'] = df['pack_years'].fillna(0) + df['radon_exposure'] + df['asbestos_exposure'] + df['secondhand_smoke_exposure'] + df['copd_diagnosis'] + df['alcohol_consumption'].fillna(0) + df['family_history']
+# Crear un 'risk_score'
+df['risk_score'] = (
+    df['pack_years'].fillna(0) 
+    + df['radon_exposure'] 
+    + df['asbestos_exposure'] 
+    + df['secondhand_smoke_exposure'] 
+    + df['copd_diagnosis'] 
+    + df['alcohol_consumption'].fillna(0) 
+    + df['family_history']
+)
 
 # -----------------------------
 # 2️⃣ Definir features y target
@@ -39,29 +57,37 @@ y = df['lung_cancer']
 # -----------------------------
 # 3️⃣ Dividir en entrenamiento y test
 # -----------------------------
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 # -----------------------------
 # 4️⃣ Entrenar modelo XGBoost
 # -----------------------------
 xgb_model = xgb.XGBClassifier(
-    n_estimators=200,
-    max_depth=4,
-    learning_rate=0.1,
-    subsample=0.8,
-    colsample_bytree=0.8,
-    random_state=42,
-    use_label_encoder=False,
-    eval_metric='logloss'
+    n_estimators=202,        # número máximo de árboles, combinado con early stopping
+    max_depth=5,              # suficiente para capturar interacciones sin sobreajustar
+    learning_rate=0.05,       # más bajo que 0.1, generaliza mejor
+    subsample=0.8,            # usa 80% de los datos en cada árbol → evita sobreajuste
+    colsample_bytree=0.8,     # usa 80% de las features en cada árbol
+    random_state=20,
+    reg_lambda=1,             # regularización L2
+    reg_alpha=0,              # regularización L1 (puedes probar con >0 si quieres más sparsity)
+    n_jobs=-1,                # usa todos los núcleos de la CPU
+    eval_metric='logloss',
+    use_label_encoder=False
 )
 
-xgb_model.fit(X_train, y_train)
+xgb_model.fit(
+    X_train, y_train,
+    eval_set=[(X_test, y_test)],
+    verbose=True
+)
+
 
 # -----------------------------
 # 5️⃣ Evaluar el modelo
 # -----------------------------
-y_pred = xgb_model.predict(X_test)
 y_proba = xgb_model.predict_proba(X_test)[:,1]
+y_pred = (y_proba >= 0.5).astype(int)
 
 print("=== XGBoost Performance ===")
 print("Accuracy:", accuracy_score(y_test, y_pred))
@@ -75,24 +101,42 @@ plt.figure(figsize=(8,6))
 xgb.plot_importance(xgb_model, importance_type='weight', max_num_features=10, height=0.5, color='green')
 plt.title("Feature Importance (XGBoost)")
 plt.tight_layout()
-plt.show()
+plt.savefig(os.path.join(output_folder, "feature_importance.png"))
+plt.close()
 
 # -----------------------------
 # 7️⃣ Explicabilidad con SHAP
 # -----------------------------
-# Crear explainer para árbol
 explainer = shap.TreeExplainer(xgb_model)
 shap_values = explainer.shap_values(X_test)
 
-# Resumen global: qué features son más importantes en promedio
-shap.summary_plot(shap_values, X_test, plot_type="bar")
+# Resumen global (barras)
+shap.summary_plot(shap_values, X_test, plot_type="bar", show=False)
+plt.savefig(os.path.join(output_folder, "shap_summary_bar.png"))
+plt.close()
 
-# Resumen detallado: cómo cada feature afecta cada predicción
-shap.summary_plot(shap_values, X_test)
+# Resumen detallado (beeswarm)
+shap.summary_plot(shap_values, X_test, show=False)
+plt.savefig(os.path.join(output_folder, "shap_summary_beeswarm.png"))
+plt.close()
 
+# Matriz de confusión
+cm = confusion_matrix(y_test, y_pred)
+plt.figure(figsize=(5,4))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+plt.xlabel('Predicted')
+plt.ylabel('Actual')
+plt.title('Confusion Matrix')
+plt.savefig(os.path.join(output_folder, "confusion_matrix.png"))
 # -----------------------------
 # 8️⃣ Ejemplo de explicación individual
 # -----------------------------
-# Elegimos el primer paciente del test set
 shap.initjs()
-shap.force_plot(explainer.expected_value, shap_values[0,:], X_test.iloc[0,:])
+force_plot = shap.force_plot(explainer.expected_value, shap_values[0,:], X_test.iloc[0,:], matplotlib=True, show=False)
+plt.savefig(os.path.join(output_folder, "shap_force_individual.png"))
+plt.close()
+
+print(f"✅ Todas las gráficas se guardaron en la carpeta: {output_folder}")
+# Guardar el modelo entrenado
+xgb_model.save_model(os.path.join(output_folder, "xgb_model.json"))
+print(f"✅ El modelo entrenado se guardó en: {os.path.join(output_folder, 'xgb_model.json')}")
