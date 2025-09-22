@@ -1,0 +1,12 @@
+=== Evaluación del modelo ===
+Accuracy: 0.7499
+ROC AUC: 0.7878
+
+              precision    recall  f1-score   support
+
+           0       0.66      0.41      0.50     15636
+           1       0.77      0.91      0.83     34364
+
+    accuracy                           0.75     50000
+   macro avg       0.72      0.66      0.67     50000
+weighted avg       0.74      0.75      0.73     50000
