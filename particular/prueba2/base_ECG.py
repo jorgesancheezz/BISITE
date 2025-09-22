@@ -15,11 +15,7 @@ n_samples = fs * duration_s  # Número de muestras por ECG
 
 # Función para generar ECG simplificado
 def generate_ecg_signal(is_af=False, n_samples=7500):
-    """
-    Genera un ECG simulado:
-    - is_af: True simula fibrilación auricular con irregularidad
-    - n_samples: número de puntos de la señal
-    """
+
     t = np.linspace(0, 30, n_samples)
     # Señal base: latido regular (senoidal simplificado)
     signal = 0.5*np.sin(2*np.pi*1.0*t) + 0.05*np.random.randn(n_samples)
@@ -32,9 +28,7 @@ def generate_ecg_signal(is_af=False, n_samples=7500):
 
 # Función de filtrado bandpass (0.5-40 Hz)
 def bandpass_filter(signal, fs, low=0.5, high=40):
-    """
-    Aplica filtro pasabanda para eliminar ruido muy bajo o alto.
-    """
+
     b, a = butter(3, [low/(0.5*fs), high/(0.5*fs)], btype='band')
     return filtfilt(b, a, signal)
 
