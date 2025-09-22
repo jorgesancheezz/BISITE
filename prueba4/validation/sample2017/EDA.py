@@ -20,7 +20,7 @@ eda_df = pd.DataFrame(columns=[
 ])
 
 # Recorrer registros
-for rec in records:
+for rec in records:  # Limitar a los primeros 10 para prueba
     try:
         r = wfdb.rdrecord(os.path.join(data_path, rec))
         if r.p_signal is None:
@@ -37,7 +37,7 @@ for rec in records:
 
         # Usamos la primera señal para análisis y gráficos
         signal = signals[:,0]
-
+        
         # Detectar picos R con NeuroKit2
         ecg_cleaned = nk.ecg_clean(signal, sampling_rate=fs)
         ecg_peaks, info = nk.ecg_peaks(ecg_cleaned, sampling_rate=fs)
@@ -61,10 +61,10 @@ for rec in records:
 
         # Graficar primera señal con picos R (primeras 6000 muestras)
         plt.figure(figsize=(12,4))
-        plt.plot(signal[:6000], label="ECG")
-        r_peaks = ecg_peaks["ECG_R_Peaks"]
+        plt.plot(ecg_cleaned[:6000], label="ECG")
+        r_peaks = info["ECG_R_Peaks"]
         r_peaks_in_window = r_peaks[r_peaks < 6000]  # solo las que están en las primeras 6000 muestras
-        plt.scatter(r_peaks_in_window, signal[r_peaks_in_window], color='red', marker='x', label='R Peaks')
+        plt.scatter(r_peaks_in_window,ecg_cleaned[r_peaks_in_window], color='red', marker='x', label='R Peaks')
         plt.title(f"Registro {rec} - primeras 6000 muestras")
         plt.xlabel("Muestra")
         plt.ylabel("Amplitud")

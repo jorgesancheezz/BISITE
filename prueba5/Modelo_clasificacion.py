@@ -37,7 +37,7 @@ df['risk_score'] = (
     + df['asbestos_exposure'] 
     + df['secondhand_smoke_exposure'] 
     + df['copd_diagnosis'] 
-    + df['alcohol_consumption'].fillna(0) 
+    + df['alcohol_consumption']
     + df['family_history']
 )
 

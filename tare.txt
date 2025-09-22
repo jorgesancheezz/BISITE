@@ -1,0 +1,4 @@
+probar con cancer cambiar metodo balanceo con smote
+logging sin sobreescribir graficos crear distintas carpetas
+permutation importance a mano 
+entrenar red neuronal simple pytorch 
