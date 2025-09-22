@@ -6,7 +6,7 @@ import xgboost as xgb
 from sklearn.metrics import accuracy_score, roc_auc_score, classification_report, confusion_matrix
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from datetime import datetime
 
 def preprocess(df: pd.DataFrame) -> pd.DataFrame:
     # Copia para no modificar el original
@@ -52,16 +52,23 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def unique_out_name(base, ext=".png"):
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    return os.path.join(args.outdir, f"{base}_{timestamp}{ext}")
+
 def main():
     parser = argparse.ArgumentParser(description='Evaluar modelo XGBoost entrenado o predecir nuevos casos.')
+    # Forzar resultados dentro de prueba5/resultados_modelo por defecto
+    default_outdir = os.path.join(os.path.dirname(__file__), 'resultados_modelo')
     parser.add_argument('--data', type=str, default=os.path.join(os.path.dirname(__file__), 'lung_cancer_dataset.csv'),
                         help='Ruta al CSV con datos. Por defecto, lung_cancer_dataset.csv en esta carpeta.')
-    parser.add_argument('--model', type=str, default=os.path.join(os.path.dirname(__file__), 'resultados_modelo', 'xgb_model.json'),
+    parser.add_argument('--model', type=str, default=os.path.join(default_outdir, 'xgb_model.json'),
                         help='Ruta al modelo XGBoost guardado (.json).')
     parser.add_argument('--threshold', type=float, default=0.5, help='Umbral para clasificar (0-1).')
-    parser.add_argument('--outdir', type=str, default=os.path.join(os.path.dirname(__file__), 'resultados_modelo'),
+    parser.add_argument('--outdir', type=str, default=default_outdir,
                         help='Carpeta para guardar resultados.')
 
+    global args
     args = parser.parse_args()
     os.makedirs(args.outdir, exist_ok=True)
 
@@ -85,7 +92,7 @@ def main():
     y_pred = (y_proba >= args.threshold).astype(int)
 
     # Si existe la etiqueta real, evaluamos
-    metrics_txt_path = os.path.join(args.outdir, 'eval_resumen.txt')
+    metrics_txt_path = os.path.join(args.outdir, f'eval_resumen_{datetime.now().strftime("%Y%m%d_%H%M%S")}.txt')
     if 'lung_cancer' in df_prep.columns:
         y_true = df_prep['lung_cancer'].astype(int)
         acc = accuracy_score(y_true, y_pred)
@@ -110,7 +117,7 @@ def main():
         plt.ylabel('Actual')
         plt.title('Confusion Matrix (evaluación)')
         plt.tight_layout()
-        plt.savefig(os.path.join(args.outdir, 'confusion_matrix_eval.png'))
+        plt.savefig(unique_out_name('confusion_matrix_eval'))
         plt.close()
 
         print(f"Accuracy: {acc:.4f} | ROC AUC: {auc:.4f}")
@@ -122,8 +129,9 @@ def main():
     out_pred = df.copy()
     out_pred['pred_proba'] = y_proba
     out_pred['pred_label'] = y_pred
-    out_csv = os.path.join(args.outdir, 'predicciones.csv')
+    out_csv = os.path.join(args.outdir, f'predicciones_{datetime.now().strftime("%Y%m%d_%H%M%S")}.csv')
     out_pred.to_csv(out_csv, index=False)
     print(f"Predicciones guardadas en: {out_csv}")
+
 if __name__ == '__main__':
     main()

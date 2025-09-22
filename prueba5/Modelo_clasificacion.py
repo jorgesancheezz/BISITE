@@ -10,10 +10,16 @@ import numpy as np
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
 from sklearn.utils.class_weight import compute_class_weight
+from datetime import datetime
 
-# Crear carpeta para guardar resultados
-output_folder = "resultados_modelo"
+# Crear carpeta para guardar resultados dentro de prueba5
+output_folder = os.path.join(os.path.dirname(__file__), "resultados_modelo")
 os.makedirs(output_folder, exist_ok=True)
+
+# Utilidad para nombre único de imagen
+def unique_fig_name(base):
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    return os.path.join(output_folder, f"{base}_{timestamp}.png")
 
 # Cargar y preparar los datos
 data_path = "C:\\Users\\BISITE-NEL\\Desktop\\pruebas\\prueba5\\lung_cancer_dataset.csv"
@@ -100,7 +106,7 @@ plt.figure(figsize=(8,6))
 xgb.plot_importance(xgb_model, importance_type='weight', max_num_features=10, height=0.5, color='green')
 plt.title("Feature Importance (XGBoost)")
 plt.tight_layout()
-plt.savefig(os.path.join(output_folder, "feature_importance.png"))
+plt.savefig(unique_fig_name("feature_importance"))
 plt.close()
 
 # Explicabilidad con SHAP
@@ -109,12 +115,12 @@ shap_values = explainer.shap_values(X_test)
 
 # Resumen global (barras)
 shap.summary_plot(shap_values, X_test, plot_type="bar", show=False)
-plt.savefig(os.path.join(output_folder, "shap_summary_bar.png"))
+plt.savefig(unique_fig_name("shap_summary_bar"))
 plt.close()
 
 # Resumen detallado (beeswarm)
 shap.summary_plot(shap_values, X_test, show=False)
-plt.savefig(os.path.join(output_folder, "shap_summary_beeswarm.png"))
+plt.savefig(unique_fig_name("shap_summary_beeswarm"))
 plt.close()
 
 # Matriz de confusión
@@ -124,7 +130,8 @@ sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix')
-plt.savefig(os.path.join(output_folder, "confusion_matrix.png"))
+plt.savefig(unique_fig_name("confusion_matrix"))
+plt.close()
 
 print(f"Todas las gráficas se guardaron en la carpeta: {output_folder}")
 # Guardar el modelo entrenado

@@ -10,10 +10,16 @@ import seaborn as sns
 from imblearn.over_sampling import SMOTE
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
 import logging
+from datetime import datetime
 
-# Crear carpeta para guardar resultados
-output_folder = "resultados_modelo_smote"
+# Crear carpeta para guardar resultados dentro de prueba5
+output_folder = os.path.join(os.path.dirname(__file__), "resultados_modelo_smote")
 os.makedirs(output_folder, exist_ok=True)
+
+# Utilidad para nombre único de imagen
+def unique_fig_name(base):
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    return os.path.join(output_folder, f"{base}_{timestamp}.png")
 
 # Configurar logging
 logging.basicConfig(
@@ -100,17 +106,17 @@ plt.figure(figsize=(8,6))
 xgb.plot_importance(xgb_model_smote, importance_type='weight', max_num_features=10, height=0.5, color='blue')
 plt.title("Feature Importance (XGBoost SMOTE)")
 plt.tight_layout()
-plt.savefig(os.path.join(output_folder, "feature_importance_smote.png"))
+plt.savefig(unique_fig_name("feature_importance_smote"))
 plt.close()
 
 # SHAP SMOTE
 explainer_sm = shap.TreeExplainer(xgb_model_smote)
 shap_values_sm = explainer_sm.shap_values(X_test)
 shap.summary_plot(shap_values_sm, X_test, plot_type="bar", show=False)
-plt.savefig(os.path.join(output_folder, "shap_summary_bar_smote.png"))
+plt.savefig(unique_fig_name("shap_summary_bar_smote"))
 plt.close()
 shap.summary_plot(shap_values_sm, X_test, show=False)
-plt.savefig(os.path.join(output_folder, "shap_summary_beeswarm_smote.png"))
+plt.savefig(unique_fig_name("shap_summary_beeswarm_smote"))
 plt.close()
 
 # Matriz de confusión SMOTE
@@ -120,7 +126,7 @@ sns.heatmap(cm_sm, annot=True, fmt='d', cmap='Blues')
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix (SMOTE)')
-plt.savefig(os.path.join(output_folder, "confusion_matrix_smote.png"))
+plt.savefig(unique_fig_name("confusion_matrix_smote"))
 
 print(f"Todas las gráficas SMOTE se guardaron en la carpeta: {output_folder}")
 # Guardar el modelo SMOTE
