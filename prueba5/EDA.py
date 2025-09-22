@@ -4,8 +4,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 data_path = "C:\\Users\\BISITE-NEL\\Desktop\\pruebas\\prueba5\\lung_cancer_dataset.csv"
-output_folder = "resultados_frequencies"
+output_folder = os.path.join(os.path.dirname(__file__), "resultados_frequencies")
 os.makedirs(output_folder, exist_ok=True)
+
+from datetime import datetime
+def unique_fig_name(base):
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    return os.path.join(output_folder, f"{base}_{timestamp}.png")
 
 df = pd.read_csv(data_path)
 
@@ -17,47 +22,47 @@ categorical_vars = ['gender','copd_diagnosis','alcohol_consumption',
 plt.figure(figsize=(6,4))
 sns.histplot(df['age'], kde=True, bins=20)
 plt.title("Age Distribution")
-plt.savefig(os.path.join(output_folder, "age_distribution.png"))
+plt.savefig(unique_fig_name("age_distribution"))
 
 plt.figure(figsize=(6,4))
 sns.boxplot(x="lung_cancer", y="age", data=df)
 plt.title("Age vs Lung Cancer")
-plt.savefig(os.path.join(output_folder, "age_vs_lung_cancer.png"))
+plt.savefig(unique_fig_name("age_vs_lung_cancer"))
 
 plt.figure(figsize=(5,4))
 sns.countplot(x="gender", data=df)
 plt.title("Gender Distribution")
-plt.savefig(os.path.join(output_folder, "gender_distribution.png"))
+plt.savefig(unique_fig_name("gender_distribution"))
 
 plt.figure(figsize=(6,4))
 sns.countplot(x="gender", hue="lung_cancer", data=df)
 plt.title("Gender vs Lung Cancer")
-plt.savefig(os.path.join(output_folder, "gender_vs_lung_cancer.png"))
+plt.savefig(unique_fig_name("gender_vs_lung_cancer"))
 
 plt.figure(figsize=(6,4))
 sns.histplot(df['pack_years'], kde=True, bins=20)
 plt.title("Pack Years (Smoking Intensity)")
-plt.savefig(os.path.join(output_folder, "pack_years_distribution.png"))
+plt.savefig(unique_fig_name("pack_years_distribution"))
 
 plt.figure(figsize=(6,4))
 sns.boxplot(x="lung_cancer", y="pack_years", data=df)
 plt.title("Pack Years vs Lung Cancer")
-plt.savefig(os.path.join(output_folder, "pack_years_vs_lung_cancer.png"))
+plt.savefig(unique_fig_name("pack_years_vs_lung_cancer"))
 
 plt.figure(figsize=(6,4))
 sns.scatterplot(x="age", y="pack_years", hue="lung_cancer", data=df)
 plt.title("Age vs Pack Years (Colored by Lung Cancer)")
-plt.savefig(os.path.join(output_folder, "age_vs_pack_years.png"))
+plt.savefig(unique_fig_name("age_vs_pack_years"))
 
 plt.figure(figsize=(6,4))
 sns.countplot(x="alcohol_consumption", data=df)
 plt.title("Alcohol Consumption Distribution")
-plt.savefig(os.path.join(output_folder, "alcohol_consumption_distribution.png"))
+plt.savefig(unique_fig_name("alcohol_consumption_distribution"))
 
 plt.figure(figsize=(6,4))
 sns.countplot(x="alcohol_consumption", hue="lung_cancer", data=df)
 plt.title("Alcohol Consumption vs Lung Cancer")
-plt.savefig(os.path.join(output_folder, "alcohol_consumption_vs_lung_cancer.png"))
+plt.savefig(unique_fig_name("alcohol_consumption_vs_lung_cancer"))
 
 plt.figure(figsize=(6,4))
 sns.countplot(x="secondhand_smoke_exposure", data=df)
