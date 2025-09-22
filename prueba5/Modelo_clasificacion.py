@@ -30,7 +30,7 @@ df['copd_diagnosis'] = df['copd_diagnosis'].map({'No':0,'Yes':1})
 df['asbestos_exposure'] = df['asbestos_exposure'].map({'No':0,'Yes':1})
 df['secondhand_smoke_exposure'] = df['secondhand_smoke_exposure'].map({'No':0,'Yes':1})
 df['lung_cancer'] = df['lung_cancer'].map({'No':0,'Yes':1})
-df['alcohol_consumption'] = df['alcohol_consumption'].map({'None':0,'Moderate':1,'Heavy':2})
+df['alcohol_consumption'] = df['alcohol_consumption'].map({'Moderate':0,'Heavy':1})
 df['radon_exposure'] = df['radon_exposure'].map({'Low':0,'Medium':1,'High':2})
 
 # Crear un 'risk_score'
@@ -138,5 +138,6 @@ plt.close()
 
 print(f"✅ Todas las gráficas se guardaron en la carpeta: {output_folder}")
 # Guardar el modelo entrenado
+
 xgb_model.save_model(os.path.join(output_folder, "xgb_model.json"))
 print(f"✅ El modelo entrenado se guardó en: {os.path.join(output_folder, 'xgb_model.json')}")
