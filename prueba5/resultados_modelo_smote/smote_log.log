@@ -1,0 +1,31 @@
+2025-09-22 14:29:55,873 INFO: Inicio del script SMOTE
+2025-09-22 14:29:55,984 INFO: Tamaño tras SMOTE: (54982, 9)
+2025-09-22 14:32:28,816 INFO: Mejores hiperparámetros: {'colsample_bytree': 1.0, 'learning_rate': 0.1, 'max_depth': 6, 'n_estimators': 200, 'reg_alpha': 0, 'reg_lambda': 1, 'subsample': 0.8}
+2025-09-22 14:32:28,816 INFO: Mejor AUC CV: 0.8453264844349148
+2025-09-22 14:32:30,041 INFO: Accuracy: 0.7085
+2025-09-22 14:32:30,047 INFO: ROC AUC: 0.7627
+2025-09-22 14:32:30,059 INFO: 
+              precision    recall  f1-score   support
+
+           0       0.53      0.60      0.56      3127
+           1       0.81      0.76      0.78      6873
+
+    accuracy                           0.71     10000
+   macro avg       0.67      0.68      0.67     10000
+weighted avg       0.72      0.71      0.71     10000
+
+2025-09-22 14:35:37,411 INFO: Inicio del script SMOTE
+2025-09-22 14:35:37,535 INFO: Tamaño tras SMOTE: (54982, 9)
+2025-09-22 14:35:38,386 INFO: Modelo entrenado con hiperparámetros óptimos del log. GridSearchCV omitido para acelerar.
+2025-09-22 14:35:38,406 INFO: Accuracy: 0.7085
+2025-09-22 14:35:38,410 INFO: ROC AUC: 0.7627
+2025-09-22 14:35:38,419 INFO: 
+              precision    recall  f1-score   support
+
+           0       0.53      0.60      0.56      3127
+           1       0.81      0.76      0.78      6873
+
+    accuracy                           0.71     10000
+   macro avg       0.67      0.68      0.67     10000
+weighted avg       0.72      0.71      0.71     10000
+
