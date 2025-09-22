@@ -136,4 +136,21 @@ plt.close()
 print(f"Todas las gráficas se guardaron en la carpeta: {output_folder}")
 # Guardar el modelo entrenado
 xgb_model.save_model(os.path.join(output_folder, "xgb_model.json"))
+
 print(f"El modelo entrenado se guardó en: {os.path.join(output_folder, 'xgb_model.json')}")
+
+
+# Permutation Importance (solo al final)
+if __name__ == "__main__" or True:
+    from sklearn.inspection import permutation_importance
+    perm_result = permutation_importance(xgb_model, X_test, y_test, n_repeats=10, random_state=42, scoring='roc_auc')
+    importances = perm_result.importances_mean
+    indices = np.argsort(importances)[::-1]
+    plt.figure(figsize=(8,6))
+    plt.barh([features[i] for i in indices], importances[indices])
+    plt.xlabel('Permutation Importance')
+    plt.title('Feature Importance by Permutation')
+    plt.tight_layout()
+    plt.savefig(unique_fig_name("permutation_importance"))
+    plt.close()
+    print("Permutation importance calculada y guardada.")
