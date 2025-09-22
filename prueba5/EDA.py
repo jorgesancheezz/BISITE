@@ -3,15 +3,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# --- Configuración de rutas ---
 data_path = "C:\\Users\\BISITE-NEL\\Desktop\\pruebas\\prueba5\\lung_cancer_dataset.csv"
 output_folder = "resultados_frequencies"
 os.makedirs(output_folder, exist_ok=True)
 
-# --- Leer CSV ---
 df = pd.read_csv(data_path)
 
-# --- Variables categóricas a analizar ---
+# Variables categóricas a analizar
 categorical_vars = ['gender','copd_diagnosis','alcohol_consumption',
                     'family_history','asbestos_exposure','secondhand_smoke_exposure']
 
