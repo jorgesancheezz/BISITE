@@ -1,4 +1,3 @@
-# --- Importar librerías ---
 import pandas as pd
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
@@ -10,14 +9,13 @@ import os
 import numpy as np
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
+from sklearn.utils.class_weight import compute_class_weight
 
 # Crear carpeta para guardar resultados
 output_folder = "resultados_modelo"
 os.makedirs(output_folder, exist_ok=True)
 
-# -----------------------------
-# 1️⃣ Cargar y preparar los datos
-# -----------------------------
+# Cargar y preparar los datos
 data_path = "C:\\Users\\BISITE-NEL\\Desktop\\pruebas\\prueba5\\lung_cancer_dataset.csv"
 df = pd.read_csv(data_path)
 
@@ -33,7 +31,6 @@ df['lung_cancer'] = df['lung_cancer'].map({'No':0,'Yes':1})
 df['alcohol_consumption'] = df['alcohol_consumption'].map({'Moderate':0,'Heavy':1})
 df['radon_exposure'] = df['radon_exposure'].map({'Low':0,'Medium':1,'High':2})
 
-# Crear un 'risk_score'
 df['risk_score'] = (
     df['pack_years'].fillna(0) 
     + df['radon_exposure'] 
@@ -44,9 +41,9 @@ df['risk_score'] = (
     + df['family_history']
 )
 
-# -----------------------------
-# 2️⃣ Definir features y target
-# -----------------------------
+
+#Definir features y target
+
 features = ['age','pack_years','risk_score','gender','copd_diagnosis',
             'alcohol_consumption','family_history','asbestos_exposure',
             'secondhand_smoke_exposure','radon_exposure']
@@ -54,14 +51,22 @@ features = ['age','pack_years','risk_score','gender','copd_diagnosis',
 X = df[features]
 y = df['lung_cancer']
 
-# -----------------------------
-# 3️⃣ Dividir en entrenamiento y test
-# -----------------------------
+
+#Dividir en entrenamiento y test
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-# -----------------------------
-# 4️⃣ Entrenar modelo XGBoost
-# -----------------------------
+# Manejar el desbalanceo con pesos de clase
+classes = np.unique(y_train)
+class_weights = compute_class_weight(class_weight='balanced', classes=classes, y=y_train)
+class_weight_dict = {i: w for i, w in enumerate(class_weights)}
+print('Clases de pesos:', class_weight_dict)
+train_sample_weight = y_train.map(class_weight_dict)
+val_sample_weight = y_test.map(class_weight_dict)
+
+
+# Entrenar y definir XGBoost
+
 xgb_model = xgb.XGBClassifier(
     n_estimators=202,        # número máximo de árboles, combinado con early stopping
     max_depth=5,              # suficiente para capturar interacciones sin sobreajustar
@@ -72,31 +77,28 @@ xgb_model = xgb.XGBClassifier(
     reg_lambda=1,             # regularización L2
     reg_alpha=0,              # regularización L1 (puedes probar con >0 si quieres más sparsity)
     n_jobs=-1,                # usa todos los núcleos de la CPU
-    eval_metric='logloss',
+    eval_metric=["logloss", "auc", "aucpr"],
     use_label_encoder=False
 )
 
 xgb_model.fit(
     X_train, y_train,
+    sample_weight=train_sample_weight,  # aplicar pesos de clase en train
     eval_set=[(X_test, y_test)],
+    sample_weight_eval_set=[val_sample_weight],  # pesos en validación
     verbose=True
 )
 
-
-# -----------------------------
-# 5️⃣ Evaluar el modelo
-# -----------------------------
+# Evaluar el modelo
 y_proba = xgb_model.predict_proba(X_test)[:,1]
 y_pred = (y_proba >= 0.5).astype(int)
 
-print("=== XGBoost Performance ===")
+print("XGBoost Performance")
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("ROC AUC:", roc_auc_score(y_test, y_proba))
 print(classification_report(y_test, y_pred))
 
-# -----------------------------
-# 6️⃣ Feature importance nativa de XGBoost
-# -----------------------------
+# Feature importance nativa de XGBoost
 plt.figure(figsize=(8,6))
 xgb.plot_importance(xgb_model, importance_type='weight', max_num_features=10, height=0.5, color='green')
 plt.title("Feature Importance (XGBoost)")
@@ -104,9 +106,7 @@ plt.tight_layout()
 plt.savefig(os.path.join(output_folder, "feature_importance.png"))
 plt.close()
 
-# -----------------------------
-# 7️⃣ Explicabilidad con SHAP
-# -----------------------------
+# Explicabilidad con SHAP
 explainer = shap.TreeExplainer(xgb_model)
 shap_values = explainer.shap_values(X_test)
 
@@ -128,16 +128,8 @@ plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix')
 plt.savefig(os.path.join(output_folder, "confusion_matrix.png"))
-# -----------------------------
-# 8️⃣ Ejemplo de explicación individual
-# -----------------------------
-shap.initjs()
-force_plot = shap.force_plot(explainer.expected_value, shap_values[0,:], X_test.iloc[0,:], matplotlib=True, show=False)
-plt.savefig(os.path.join(output_folder, "shap_force_individual.png"))
-plt.close()
 
-print(f"✅ Todas las gráficas se guardaron en la carpeta: {output_folder}")
+print(f"Todas las gráficas se guardaron en la carpeta: {output_folder}")
 # Guardar el modelo entrenado
-
 xgb_model.save_model(os.path.join(output_folder, "xgb_model.json"))
-print(f"✅ El modelo entrenado se guardó en: {os.path.join(output_folder, 'xgb_model.json')}")
+print(f"El modelo entrenado se guardó en: {os.path.join(output_folder, 'xgb_model.json')}")
