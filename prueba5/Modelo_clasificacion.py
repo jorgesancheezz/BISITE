@@ -41,7 +41,6 @@ df['risk_score'] = (
     + df['family_history']
 )
 
-
 #Definir features y target
 
 features = ['age','pack_years','risk_score','gender','copd_diagnosis',
@@ -50,7 +49,6 @@ features = ['age','pack_years','risk_score','gender','copd_diagnosis',
 
 X = df[features]
 y = df['lung_cancer']
-
 
 #Dividir en entrenamiento y test
 
@@ -63,7 +61,6 @@ class_weight_dict = {i: w for i, w in enumerate(class_weights)}
 print('Clases de pesos:', class_weight_dict)
 train_sample_weight = y_train.map(class_weight_dict)
 val_sample_weight = y_test.map(class_weight_dict)
-
 
 # Entrenar y definir XGBoost
 
