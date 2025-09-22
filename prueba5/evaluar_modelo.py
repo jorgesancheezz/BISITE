@@ -23,7 +23,7 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
         'asbestos_exposure': {'No': 0, 'Yes': 1},
         'secondhand_smoke_exposure': {'No': 0, 'Yes': 1},
         'lung_cancer': {'No': 0, 'Yes': 1},
-        'alcohol_consumption': { 'Moderate': 0, 'Heavy': 1},
+        'alcohol_consumption': { 'None': 0, 'Moderate': 1, 'Heavy': 2},
         'radon_exposure': {'Low': 0, 'Medium': 1, 'High': 2},
     }
 
@@ -45,7 +45,7 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
         + df['asbestos_exposure']
         + df['secondhand_smoke_exposure']
         + df['copd_diagnosis']
-        + df['alcohol_consumption'].fillna(0)
+        + df['alcohol_consumption']
         + df['family_history']
     )
 
