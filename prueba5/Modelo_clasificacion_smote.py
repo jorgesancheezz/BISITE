@@ -59,7 +59,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Imputar NaN en X_train antes de SMOTE
 X_train = X_train.fillna(X_train.mean(numeric_only=True))
-# ----------- SMOTE -------------
+# SMOTE 
 smote = SMOTE(random_state=42)
 X_train_sm, y_train_sm = smote.fit_resample(X_train, y_train)
 
@@ -67,7 +67,7 @@ logging.info(f"Tamaño tras SMOTE: {X_train_sm.shape}")
 
 
 
-# ----------- Entrenar XGBoost con los mejores hiperparámetros encontrados -----------
+# Entrenar XGBoost con los mejores hiperparámetros encontrados 
 xgb_model_smote = xgb.XGBClassifier(
     colsample_bytree=1.0,
     learning_rate=0.1,
@@ -86,7 +86,6 @@ xgb_model_smote.fit(
     eval_set=[(X_test, y_test)],
     verbose=True
 )
-logging.info("Modelo entrenado con hiperparámetros óptimos del log. GridSearchCV omitido para acelerar.")
 
 # Evaluar el modelo SMOTE
 y_proba_sm = xgb_model_smote.predict_proba(X_test)[:,1]
