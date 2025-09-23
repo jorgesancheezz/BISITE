@@ -43,3 +43,18 @@ weighted avg       0.72      0.71      0.71     10000
    macro avg       0.67      0.68      0.67     10000
 weighted avg       0.72      0.71      0.71     10000
 
+2025-09-23 08:40:44,246 INFO: Inicio del script SMOTE
+2025-09-23 08:40:44,393 INFO: Tamaño tras SMOTE: (54982, 9)
+2025-09-23 08:40:45,299 INFO: Modelo entrenado con hiperparámetros óptimos del log. GridSearchCV omitido para acelerar.
+2025-09-23 08:40:45,321 INFO: Accuracy: 0.7085
+2025-09-23 08:40:45,325 INFO: ROC AUC: 0.7627
+2025-09-23 08:40:45,334 INFO: 
+              precision    recall  f1-score   support
+
+           0       0.53      0.60      0.56      3127
+           1       0.81      0.76      0.78      6873
+
+    accuracy                           0.71     10000
+   macro avg       0.67      0.68      0.67     10000
+weighted avg       0.72      0.71      0.71     10000
+
