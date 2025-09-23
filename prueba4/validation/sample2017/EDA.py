@@ -7,7 +7,8 @@ import seaborn as sns
 import neurokit2 as nk
 # Carpeta donde guardaste los registros
 data_path = "C:\\Users\\BISITE-NEL\\Desktop\\pruebas\\prueba4\\validation\\sample2017\\validation"
-output_folder = "resultados"    # carpeta donde se guardarán las imágenes
+output_folder = os.path.join(os.path.dirname(__file__), "..", "..", "resultados")  # carpeta dentro de prueba4
+output_folder = os.path.abspath(output_folder)
 os.makedirs(output_folder, exist_ok=True)
 
 # Lista de registros
