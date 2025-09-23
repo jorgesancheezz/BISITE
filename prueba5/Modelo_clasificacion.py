@@ -11,8 +11,7 @@ import seaborn as sns
 from sklearn.metrics import confusion_matrix
 from sklearn.utils.class_weight import compute_class_weight
 from datetime import datetime
-import eli5
-from eli5.sklearn import PermutationImportance
+
 
 # Crear carpeta para guardar resultados dentro de prueba5
 output_folder = os.path.join(os.path.dirname(__file__), "resultados_modelo")
@@ -132,16 +131,28 @@ xgb_model.save_model(os.path.join(output_folder, "xgb_model.json"))
 print(f"El modelo entrenado se guardó en: {os.path.join(output_folder, 'xgb_model.json')}")
 
 
-# Permutation Importance (solo al final)
-perm = PermutationImportance(xgb_model, random_state=1, n_iter=30).fit(X_test, y_test)
-eli5.show_weights(perm, feature_names = X_test.columns.tolist())
-importances = perm.feature_importances_
+# Permutation Importance
+def permutation_importance_manual(xgb_model, X, y, accuracy_score, n_repeats=20, random_state=42):
+    np.random.seed(random_state)
+    base_score = accuracy_score(y, xgb_model.predict(X))
+    importances = []
+    for col in X.columns:
+        scores = []
+        for _ in range(n_repeats):
+            X_permuted = X.copy()
+            X_permuted[col] = np.random.permutation(X_permuted[col].values)
+            score = accuracy_score(y, xgb_model.predict(X_permuted))
+            scores.append(base_score - score)
+        importances.append(np.mean(scores))
+    return np.array(importances)
+# Graficar y guardar permutation importance manual
+importances = permutation_importance_manual(xgb_model, X_test, y_test, accuracy_score, n_repeats=20)
 indices = np.argsort(importances)[::-1]
-plt.figure(figsize=(8,6))
-plt.barh([X_test.columns[i] for i in indices], importances[indices])
+plt.figure(figsize=(8, 6))
+plt.barh([X_test.columns[i] for i in indices][::-1], importances[indices][::-1])
 plt.xlabel('Permutation Importance')
-plt.title('Feature Importance by Permutation')
+plt.title('Feature Importance Permutation')
 plt.tight_layout()
-plt.savefig(unique_fig_name("permutation_importance"))
+plt.savefig(unique_fig_name("permutation_importance_manual"))
 plt.close()
-print("Permutation importance calculada y guardada.")
+print("Permutation importance manual calculada y guardada.")
