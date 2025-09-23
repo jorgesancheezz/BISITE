@@ -133,9 +133,9 @@ xgb_model_smote.save_model(os.path.join(output_folder, "xgb_model_smote.json"))
 
 print(f"El modelo SMOTE se guardó en: {os.path.join(output_folder, 'xgb_model_smote.json')}")
 
-# Permutation Importance (solo al final)
+# Permutation Importance 
 from sklearn.inspection import permutation_importance
-perm_result = permutation_importance(xgb_model_smote, X_test, y_test, n_repeats=10, random_state=42, scoring='roc_auc')
+perm_result = permutation_importance(xgb_model_smote, X_test, y_test, n_repeats=30, random_state=42, scoring='roc_auc')
 importances = perm_result.importances_mean
 indices = np.argsort(importances)[::-1]
 plt.figure(figsize=(8,6))

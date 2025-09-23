@@ -58,3 +58,17 @@ weighted avg       0.72      0.71      0.71     10000
    macro avg       0.67      0.68      0.67     10000
 weighted avg       0.72      0.71      0.71     10000
 
+2025-09-23 09:10:55,827 INFO: Inicio del script SMOTE
+2025-09-23 09:10:55,930 INFO: Tamaño tras SMOTE: (54982, 9)
+2025-09-23 09:10:56,789 INFO: Accuracy: 0.7085
+2025-09-23 09:10:56,793 INFO: ROC AUC: 0.7627
+2025-09-23 09:10:56,800 INFO: 
+              precision    recall  f1-score   support
+
+           0       0.53      0.60      0.56      3127
+           1       0.81      0.76      0.78      6873
+
+    accuracy                           0.71     10000
+   macro avg       0.67      0.68      0.67     10000
+weighted avg       0.72      0.71      0.71     10000
+
