@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run icentia WFDB demo",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-X",
+				"prueba2/cargar_icentia_wfdb.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
