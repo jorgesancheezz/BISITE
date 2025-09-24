@@ -1,0 +1,7 @@
+[INFO] Vacíos/NaN originales en alcohol_consumption: 16662
+[INFO] NaN por columna antes de imputar:
+alcohol_consumption    16662
+[INFO] Imputación aplicada en columnas:
+  - alcohol_consumption
+=== RESULTADOS ENTRENAMIENTO/EVALUACIÓN ===
+Accuracy en test (PyTorch): 0.7356

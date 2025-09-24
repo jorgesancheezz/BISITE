@@ -1,0 +1,12 @@
+Total filas: 50000
+NaN crudos (CSV): 16662
+Coincidencias exactas (None/Moderate/Heavy): 33338
+Coincidencias tras normalizar (none/moderate/heavy): 33338
+Corregibles con strip+lower: 0
+Desconocidos tras normalizar (no NaN, no en set): 0
+
+Top 20 "desconocidos" tras normalizar:
+(ninguno)
+
+Top 20 valores que se arreglan con strip+lower (no exactos pero sí normalizados):
+(ninguno)
