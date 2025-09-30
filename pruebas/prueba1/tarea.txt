@@ -1,0 +1,30 @@
+<<<<<<< HEAD
+guardar inputs y outputs
+script para la evaluacion del modelo
+figuras conjuntas representar
+
+generar otra arquitectura convulucionales
+busqueda de hiperparametros de ambas arquitecturas
+randomsearchs
+crossvalidation
+
+test T corregido
+autoencorders
+GAN generative adversarial networks
+denoising diffusion 
+=======
+guardar inputs y outputs
+script para la evaluacion del modelo
+figuras conjuntas representar
+
+generar otra arquitectura convulucionales
+busqueda de hiperparametros de ambas arquitecturas
+randomsearchs
+crossvalidation
+
+test T corregido
+autoencorders
+GAN generative adversarial networks
+denoising diffusion 
+>>>>>>> 281572b8bf9104c6fce3a94fc47cef7cbeba4aac
+generacion condicional en denoising diffusion
