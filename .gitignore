@@ -1,0 +1,16 @@
+# --- Ignorar datos locales y entornos ---
+p10/
+.venv/
+.venv-1/
+.vscode/
+__pycache__/
+.ipynb_checkpoints/
+*.log
+*.tmp
+pruebas/prueba6/resultados2/
+p10/
+.venv/
+.venv-1/
+.vscode/
+__pycache__/
+.ipynb_checkpoints/
