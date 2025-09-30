@@ -1,3 +1,0 @@
-# Matriz de confusión
-74 5
-8 13
