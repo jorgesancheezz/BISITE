@@ -91,14 +91,24 @@ logging.info(f'Pesos de clases base: {class_weight_dict}')
 train_sample_weight = y_train.map(class_weight_dict).values
 
 # Ajustar los pesos según el risk_score (mayor riesgo = mayor peso)
-# Normalizar risk_score para que esté entre 0.5 y 1.5
+# Normalizar risk_score para que esté entre 0.8 y 1.2 (rango conservador para mantener pesos positivos)
 risk_scores_train = X_train['risk_score'].values
-risk_weight_factor = 0.5 + (risk_scores_train / risk_scores_train.max())
+risk_min = risk_scores_train.min()
+risk_max = risk_scores_train.max()
+# Normalizar a [0, 1] y luego escalar a [0.8, 1.2]
+if risk_max > risk_min:
+    risk_weight_factor = 0.8 + 0.4 * ((risk_scores_train - risk_min) / (risk_max - risk_min))
+else:
+    risk_weight_factor = np.ones_like(risk_scores_train)
 train_sample_weight = train_sample_weight * risk_weight_factor
 
 val_sample_weight = y_test.map(class_weight_dict).values
 risk_scores_test = X_test['risk_score'].values
-risk_weight_factor_test = 0.5 + (risk_scores_test / risk_scores_test.max())
+# Usar los mismos valores min/max del entrenamiento para consistencia
+if risk_max > risk_min:
+    risk_weight_factor_test = 0.8 + 0.4 * ((risk_scores_test - risk_min) / (risk_max - risk_min))
+else:
+    risk_weight_factor_test = np.ones_like(risk_scores_test)
 val_sample_weight = val_sample_weight * risk_weight_factor_test
 
 logging.info("Pesos de muestra ajustados por risk_score")
