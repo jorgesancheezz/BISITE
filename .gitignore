@@ -17,6 +17,9 @@ __pycache__/
 particular/
 prueba1/
 prueba4/
-prueba5/
+pruebas/prueba5/resultados_modelo/
+pruebas/prueba5/resultados_modelo_smote/
+pruebas/prueba5/resultados_frequencies/
+pruebas/prueba5/resultados_red_neuronal/
 tara.txt
 !pruebas/prueba6/resultados2/.gitkeep
