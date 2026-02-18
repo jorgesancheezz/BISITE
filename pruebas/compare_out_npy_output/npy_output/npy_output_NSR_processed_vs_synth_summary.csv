@@ -1,0 +1,11 @@
+metric,value
+name,npy_output_NSR_processed_vs_synth
+mmd2,-0.0007670948510438702
+mmd_sigma,77.52511656602006
+energy,0.0
+ks_stat,0.0
+ks_p,1.0
+wasserstein,0.0
+mean_diff_proj,0.0
+psd_l2,0.0
+discriminator_auc,0.4990339550454328

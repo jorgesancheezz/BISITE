@@ -1,0 +1,22 @@
+{
+  "name": "npy_output_AF_processed_vs_synth",
+  "mmd2": -0.000767558503198762,
+  "mmd_sigma": 77.49918564082597,
+  "energy": 0.0,
+  "ks_stat": 0.0,
+  "ks_p": 1.0,
+  "wasserstein": 0.0,
+  "mean_diff_proj": 0.0,
+  "psd_l2": 0.0,
+  "discriminator_auc": 0.49901721664275467,
+  "DS": 0.3247689283922969,
+  "PS": 0.001951219512195122,
+  "MDD": 0.0,
+  "ACD": 0.0,
+  "SD": 0.0,
+  "KD": 0.0,
+  "CFID": 0.00011422348158606727,
+  "tSNE_silhouette": -0.001991532975807786,
+  "tSNE_path": "compare_out_npy_output\\npy_output\\pretty_AF\\tsne_scatter.png",
+  "DTW": 0.0
+}

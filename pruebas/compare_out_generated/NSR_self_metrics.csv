@@ -1,0 +1,2 @@
+mmd2,mmd_sigma,energy,ks_stat,ks_p,wasserstein,mean_diff_proj,psd_l2,discriminator_auc,DS,PS,MDD,ACD,SD,KD,CFID,DTW,pair
+-0.0008281745279290487,27.50112156618013,0.0,0.0,1.0,0.0,0.0,0.0,0.3669877290595001,0.3669877290595001,,0.0,0.0,0.0,0.0,5.734107848204956e-05,0.0,NSR_self

@@ -1,0 +1,23 @@
+{
+  "psd_mean_files": "compare_out_test\\mean_psd.png",
+  "rr_stats": {
+    "AF": {
+      "rmssd_ks_p": 1.0,
+      "rmssd_wass": 0.0,
+      "cv_ks_p": 1.0,
+      "cv_wass": 0.0
+    },
+    "NSR": {
+      "rmssd_ks_p": 1.0,
+      "rmssd_wass": 0.0,
+      "cv_ks_p": 1.0,
+      "cv_wass": 0.0
+    }
+  },
+  "counts": {
+    "real_af": 1024,
+    "real_nsr": 1024,
+    "synth_af": 1024,
+    "synth_nsr": 1024
+  }
+}
