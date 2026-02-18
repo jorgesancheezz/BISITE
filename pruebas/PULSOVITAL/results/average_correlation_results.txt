@@ -1,0 +1,15 @@
+Synthetic file with the highest average correlation:
+PULSOVITAL/results/synthetic_scale_0.10_noise_0.01.npz with average correlation: 0.2066
+
+All synthetic files and their average correlations:
+PULSOVITAL/results/synthetic_scale_0.00_noise_0.01.npz: 0.0183
+PULSOVITAL/results/synthetic_scale_0.01_noise_0.01.npz: 0.0261
+PULSOVITAL/results/synthetic_scale_0.02_noise_0.01.npz: 0.0447
+PULSOVITAL/results/synthetic_scale_0.03_noise_0.01.npz: 0.0646
+PULSOVITAL/results/synthetic_scale_0.04_noise_0.01.npz: 0.0846
+PULSOVITAL/results/synthetic_scale_0.05_noise_0.01.npz: 0.1048
+PULSOVITAL/results/synthetic_scale_0.06_noise_0.01.npz: 0.1250
+PULSOVITAL/results/synthetic_scale_0.07_noise_0.01.npz: 0.1453
+PULSOVITAL/results/synthetic_scale_0.08_noise_0.01.npz: 0.1656
+PULSOVITAL/results/synthetic_scale_0.09_noise_0.01.npz: 0.1861
+PULSOVITAL/results/synthetic_scale_0.10_noise_0.01.npz: 0.2066

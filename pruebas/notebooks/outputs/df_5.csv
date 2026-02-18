@@ -1,0 +1,9 @@
+pair,feature,ks_stat,p_value
+article_AF vs 1024_AF,mean,1.0,0.0
+article_AF vs 1024_AF,std,1.0,0.0
+article_AF vs 1024_AF,energy,1.0,0.0
+article_AF vs 1024_AF,peak_freq,0.6435546875,5.955798204702325e-200
+article_NSR vs 1024_NSR,mean,0.916015625,0.0
+article_NSR vs 1024_NSR,std,0.5859375,3.1031345927470435e-163
+article_NSR vs 1024_NSR,energy,0.5859375,3.1031345927470435e-163
+article_NSR vs 1024_NSR,peak_freq,0.5322265625,4.513615627233987e-133

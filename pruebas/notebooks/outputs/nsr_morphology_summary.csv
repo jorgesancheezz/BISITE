@@ -1,0 +1,4 @@
+dataset,exists,n_samples_used,n_beats,template_peak_to_peak,template_rms,template_polarity
+article,True,64,500,0.3567250967025757,0.05353650078177452,positive
+1024seq,True,64,500,0.3238895535469055,0.04168456420302391,positive
+pulso,True,64,500,0.23788133263587952,0.03511364758014679,positive

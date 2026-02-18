@@ -1,0 +1,3 @@
+CLASS,tSNE,PCA_centroid,DTW,mmd2,mmd_sigma,energy,psd_12,discriminator_auc
+AF,1.492,4.176,0.265,0.196,55.155,0.421,0.001,0.806
+NSR,2.965,4.685,0.081,0.245,17.189,0.204,0.001,0.992

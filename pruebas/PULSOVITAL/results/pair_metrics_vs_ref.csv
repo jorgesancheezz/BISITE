@@ -1,0 +1,6 @@
+reference,dataset,FID,energy_distance,ks_stat,ks_pvalue
+sintetico.npy,003.npy,0.090749,0.033511,0.046645,0.000000
+sintetico.npy,004.npy,0.088563,0.029644,0.022650,0.000000
+sintetico.npy,005.npy,0.083759,0.027762,0.020495,0.000000
+sintetico.npy,006.npy,0.073074,0.056121,0.107400,0.000000
+sintetico.npy,007.npy,0.095279,0.057908,0.107265,0.000000
