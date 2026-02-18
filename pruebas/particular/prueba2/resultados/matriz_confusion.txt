@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-# Matriz de confusión
-74 5
-8 13
-=======
-# Matriz de confusión
-74 5
-8 13
->>>>>>> 281572b8bf9104c6fce3a94fc47cef7cbeba4aac

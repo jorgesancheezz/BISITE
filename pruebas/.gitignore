@@ -1,0 +1,13 @@
+# Ignore generated plotting outputs and large artifacts
+/pruebas/prueba6/resultados2/*.png
+/pruebas/prueba6/resultados2/*.npy
+/pruebas/prueba6/resultados2/*.npz
+/pruebas/prueba6/resultados2/*.bak*
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual env
+venv/
+env/

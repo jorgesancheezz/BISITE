@@ -1,0 +1,5 @@
+record,current_label,suggested_label,reason,rr_cv,nan_fraction,annotation,path
+1024seq_AF,UNKNOWN,AF,rr_cv>0.12,0.24197437311310654,9.765625e-07,,PULSOVITAL\npy_output_p09_consolidated\1024seq_AF.npy
+1024seq_NSR,UNKNOWN,AF,rr_cv>0.12,0.257769276630473,0.0,,PULSOVITAL\npy_output_p09_consolidated\1024seq_NSR.npy
+AF_processed_1024x3000x1,UNKNOWN,AF,rr_cv>0.12,0.24321429647280526,0.0,,PULSOVITAL\npy_output_p09_consolidated\AF_processed_1024x3000x1.npy
+NSR_processed_1024x3000x1,UNKNOWN,AF,rr_cv>0.12,0.257769276630473,0.0,,PULSOVITAL\npy_output_p09_consolidated\NSR_processed_1024x3000x1.npy

@@ -1,0 +1,5 @@
+files:
+- sssd_article_AF.npy
+- sssd_article_NSR.npy
+original_freq: 300
+target_freq: 300

@@ -1,0 +1,196 @@
+{
+  "1": [
+    {
+      "kw": "synthetic",
+      "snippet": "of Oldenburg, 26129 Oldenburg, Germany A R T I C L E I N F O Keywords: Cardiology Electrocardiography Signal processing Synthetic data Diffusion models Time series A B S T R A C T Generating synthetic data is a promising solution for addres"
+    },
+    {
+      "kw": "synth",
+      "snippet": "of Oldenburg, 26129 Oldenburg, Germany A R T I C L E I N F O Keywords: Cardiology Electrocardiography Signal processing Synthetic data Diffusion models Time series A B S T R A C T Generating synthetic data is a promising solution for addres"
+    }
+  ],
+  "2": [
+    {
+      "kw": "AUC",
+      "snippet": "r synthetic data, we always perform model selection based on a corresponding real/synthetic validation set score (macro AUC). For further information on the downstream classifier and training, please refer to Appendix B. 2.2. Background Dif"
+    },
+    {
+      "kw": "AUROC",
+      "snippet": "as test set. Our evaluation metric for this task is the macro- averaged area under the receiver operating curve (macro AUROC) across all 71 labels on the PTB-XL test set. As model architecture, we use a XResNet1d50 model, which is a one-di"
+    },
+    {
+      "kw": "synthetic",
+      "snippet": "re subject to strict privacy requirements, need to be generated. We demonstrate this process by creating and evaluating synthetic copies of the publicly accessible PTB-XL dataset [18–20], which is a popular ECG dataset. The main contributio"
+    },
+    {
+      "kw": "synth",
+      "snippet": "re subject to strict privacy requirements, need to be generated. We demonstrate this process by creating and evaluating synthetic copies of the publicly accessible PTB-XL dataset [18–20], which is a popular ECG dataset. The main contributio"
+    },
+    {
+      "kw": "real",
+      "snippet": "same sample to obtain the final prediction for the sample. To prevent overfitting, irrespective of whether we train on real or synthetic data, we always perform model selection based on a corresponding real/synthetic validation set score ("
+    }
+  ],
+  "3": [
+    {
+      "kw": "Figure",
+      "snippet": "med through a fully connected layer and is subsequently passed as condi- tional information to different 𝑆𝑆𝑆𝐷𝑆4 layers. Figure Fig. 1 shows a schematic representation of theSSSD-ECG model architecture. For more details about the model’s int"
+    },
+    {
+      "kw": "synthetic",
+      "snippet": "ding to several quality metrics. Also very recently, Chung et al. proposed a conditional genera- tive model to generate synthetic ECGs from text reports [44]. Due to the different task setup, their results are not directly comparable to our"
+    },
+    {
+      "kw": "synth",
+      "snippet": "ding to several quality metrics. Also very recently, Chung et al. proposed a conditional genera- tive model to generate synthetic ECGs from text reports [44]. Due to the different task setup, their results are not directly comparable to our"
+    }
+  ],
+  "4": [
+    {
+      "kw": "synthetic",
+      "snippet": "sures to quantify the quality of the generated samples. We can achieve this by training classi- fiers on either real or synthetic training sets and testing them on either real or synthetic test sets. It is worth noting that we only need to"
+    },
+    {
+      "kw": "synth",
+      "snippet": "sures to quantify the quality of the generated samples. We can achieve this by training classi- fiers on either real or synthetic training sets and testing them on either real or synthetic test sets. It is worth noting that we only need to"
+    },
+    {
+      "kw": "real",
+      "snippet": "pose measures to quantify the quality of the generated samples. We can achieve this by training classi- fiers on either real or synthetic training sets and testing them on either real or synthetic test sets. It is worth noting that we only"
+    },
+    {
+      "kw": "reference",
+      "snippet": "est sets. It is worth noting that we only need to train a single classifier on real data, which we will refer to as the reference classifier, which is kept fixed for all the remaining experiments. From it, one can infer three different perf"
+    },
+    {
+      "kw": "AF",
+      "snippet": "problems with instability when training one-class embedding as a necessary step in [49], which proved to significantly affect the results. Therefore, we have chosen not to include those corresponding results in our paper. 3. Experiments an"
+    }
+  ],
+  "5": [
+    {
+      "kw": "Table",
+      "snippet": "iles (blue shaded area) segmented beats for left-ventricular hypertrophy (LVH) samples. 3.2. Quantitative assessment In Table 1, we present a quantitative comparison of the three pro- posed generative models based on the performance metrics"
+    },
+    {
+      "kw": "real",
+      "snippet": "to bottom four grids of leads I, II, V1, and V2 respectively, where for each grid from top to bottom and left to right real, WaveGAN*, Pulse2Pulse, and SSSD-ECG Median (black line) and 0.25–0.75 quantiles (blue shaded area) segmented beats"
+    }
+  ],
+  "6": [
+    {
+      "kw": "AUROC",
+      "snippet": "lassification performance of XResNet50 models trained/evaluated on different combinations of real/synthetic data. Model AUROC WaveGAN* Test real Test synth. Train real 0.9317 0.6489 Train synth. 0.5816 0.9793 Pulse2Pulse Test real Test synt"
+    },
+    {
+      "kw": "Table",
+      "snippet": "Computers in Biology and Medicine 163 (2023) 107115 6 J.M.L. Alcaraz and N. Strodthoff Table 1 Classification performance of XResNet50 models trained/evaluated on different combinations of real/synthetic dat"
+    },
+    {
+      "kw": "synthetic",
+      "snippet": ". Strodthoff Table 1 Classification performance of XResNet50 models trained/evaluated on different combinations of real/synthetic data. Model AUROC WaveGAN* Test real Test synth. Train real 0.9317 0.6489 Train synth. 0.5816 0.9793 Pulse2Pul"
+    },
+    {
+      "kw": "synth",
+      "snippet": ". Strodthoff Table 1 Classification performance of XResNet50 models trained/evaluated on different combinations of real/synthetic data. Model AUROC WaveGAN* Test real Test synth. Train real 0.9317 0.6489 Train synth. 0.5816 0.9793 Pulse2Pul"
+    },
+    {
+      "kw": "real",
+      "snippet": "and N. Strodthoff Table 1 Classification performance of XResNet50 models trained/evaluated on different combinations of real/synthetic data. Model AUROC WaveGAN* Test real Test synth. Train real 0.9317 0.6489 Train synth. 0.5816 0.9793 Puls"
+    },
+    {
+      "kw": "reference",
+      "snippet": "d its implications: Remarkably, on one hand, SSSD-ECG even achieves a slighter better score (0.94) assessed through the reference classifier compared to evaluating the reference classifier on real samples. This is an encour- aging prospect"
+    }
+  ],
+  "7": [
+    {
+      "kw": "synthetic",
+      "snippet": "er a detailed visual representation of the generated samples. The expert was then asked to distinguish between real and synthetic signals. Fig. 7 depicts a 10-second real NORM signal that was evaluated by the medical expert. The diagnosis w"
+    },
+    {
+      "kw": "synth",
+      "snippet": "er a detailed visual representation of the generated samples. The expert was then asked to distinguish between real and synthetic signals. Fig. 7 depicts a 10-second real NORM signal that was evaluated by the medical expert. The diagnosis w"
+    },
+    {
+      "kw": "real",
+      "snippet": "iagnosis on normal samples To perform this task, we provided the expert with four 10-second 12-lead ECGs, including one real ECG and one sample from each of the generative models. These four complete ECG recordings offer a detailed visual r"
+    }
+  ],
+  "8": [
+    {
+      "kw": "Table",
+      "snippet": "diverse set of 22 different medical conditions, which underscores the high quality of the synthetic samples generated. Table A.2 PTB-XL dataset details. Description Value Train set size 17,441 Validation set size 2193 Test set size 2203 Sa"
+    },
+    {
+      "kw": "synthetic",
+      "snippet": "Computers in Biology and Medicine 163 (2023) 107115 8 J.M.L. Alcaraz and N. Strodthoff Fig. 9. Synthetic Pulse2Pulse NORM sample. Fig. 10. Synthetic SSSD-ECG NORM sample. were diagnosed incorrectly and 15 (68.18%) w"
+    },
+    {
+      "kw": "synth",
+      "snippet": "Computers in Biology and Medicine 163 (2023) 107115 8 J.M.L. Alcaraz and N. Strodthoff Fig. 9. Synthetic Pulse2Pulse NORM sample. Fig. 10. Synthetic SSSD-ECG NORM sample. were diagnosed incorrectly and 15 (68.18%) w"
+    },
+    {
+      "kw": "real",
+      "snippet": "tic SSSD-ECG NORM sample. were diagnosed incorrectly and 15 (68.18%) were diagnosed correctly. Similarly, out of the 22 real samples, the cardiologist diagnosed 12 (54.54%) incorrectly and 10 (45.45%) correctly. The higher confirma- tion ra"
+    }
+  ],
+  "9": [
+    {
+      "kw": "Table",
+      "snippet": "Computers in Biology and Medicine 163 (2023) 107115 9 J.M.L. Alcaraz and N. Strodthoff Table B.3 XResNet1d50 hyperparameters. Hyperparameter Value Block of layers 4 Layers in each block [3,4,6,3] Expansion 4"
+    },
+    {
+      "kw": "AF",
+      "snippet": "embedding in 128, 256, and 256 dimensions. To compute the initial S4 diffusion, we con- structed a convolutional layer after the diffusion embedding to double the input’s residual channel dimension. We then employed a second S4 layer that"
+    }
+  ],
+  "10": [
+    {
+      "kw": "Table",
+      "snippet": "Computers in Biology and Medicine 163 (2023) 107115 10 J.M.L. Alcaraz and N. Strodthoff Table E.7 Turing test diagnosis evaluation. Set Labels A(P) B(P) 1 NORM, SR True False 2 NDT, SR False True 3 ABQRS, IMI"
+    },
+    {
+      "kw": "synthetic",
+      "snippet": "SR True False 20 ABQRS, ASMI, IMI, SR False True 21 LVH, SR False False 22 AFIB, NST_ True False Table E.8 Turing test synthetic evaluation. Set Labels A(T) B(T) A(P) B(P) 1 NORM, SR False True False True 2 NDT, SR False True False False 3"
+    },
+    {
+      "kw": "synth",
+      "snippet": "SR True False 20 ABQRS, ASMI, IMI, SR False True 21 LVH, SR False False 22 AFIB, NST_ True False Table E.8 Turing test synthetic evaluation. Set Labels A(T) B(T) A(P) B(P) 1 NORM, SR False True False True 2 NDT, SR False True False False 3"
+    },
+    {
+      "kw": "real",
+      "snippet": "ed labels for sample A or B, respectively. The value ‘‘true’’ indicates a synthetic sample, while ‘‘false’’ indicates a real sample. References [1] M. Tzanou, Health data privacy under the GDPR: Big data challenges and regu- latory response"
+    },
+    {
+      "kw": "reference",
+      "snippet": "sample A or B, respectively. The value ‘‘true’’ indicates a synthetic sample, while ‘‘false’’ indicates a real sample. References [1] M. Tzanou, Health data privacy under the GDPR: Big data challenges and regu- latory responses, in: Routle"
+    },
+    {
+      "kw": "AF",
+      "snippet": "Set Labels A(P) B(P) 1 NORM, SR True False 2 NDT, SR False True 3 ABQRS, IMI, SR True False 4 NORM, SARRH True True 5 LAFB SR False True 6 NORM SBRAD True True 7 PACE True True 8 CLBBB, SR True False 9 LVH, SR, VCLVH False False 10 NORM Tr"
+    }
+  ],
+  "11": [
+    {
+      "kw": "F1",
+      "snippet": "162, PMLR, 2022, pp. 290–306. [50] J.M.L. Alcaraz, N. Strodthoff, SSSD-ECG data repository, https://figshare.com/s/ 43df16e4a50e4dd0a0c5, (Accessed: 2022-01-19)."
+    },
+    {
+      "kw": "synthetic",
+      "snippet": "mation Processing Systems, Vol. 32, Curran Associates, Inc., 2019. [43] E. Adib, A. Fernandez, F. Afghah, J.J. Prevost, Synthetic ECG signal generation using probabilistic diffusion models, 2023, arXiv:2303.02475. [44] H. Chung, J. Kim, J.-"
+    },
+    {
+      "kw": "synth",
+      "snippet": "ntations, 2020. [26] Z. Kong, W. Ping, J. Huang, K. Zhao, B. Catanzaro, DiffWave: A versatile diffusion model for audio synthesis, in: 9th International Conference on Learning Representations, ICLR 2021, 2021. [27] J. Ho, A. Jain, P. Abbeel"
+    },
+    {
+      "kw": "real",
+      "snippet": "onal LSTM-CNN generative adversarial network, Sci. Rep. 9 (2019). [37] A.M. Delaney, E. Brophy, T.E. Ward, Synthesis of realistic ECG using generative adversarial networks, 2019, arXiv preprint 1909.09150. [38] T. Golany, G. Lavee, S. Tejma"
+    },
+    {
+      "kw": "AF",
+      "snippet": "ta, J.L. Isaksen, S.A. Hicks, J. Ghouse, G. Ahlberg, A. Linneberg, N. Grarup, C. Ellervik, M.S. Olesen, T. Hansen, C. Graff, N.-H. Holstein-Rathlou, I. Strümke, H.L. Hammer, M.M. Maleckar, P. Halvorsen, M.A. Riegler, J.K. Kanters, DeepFake"
+    }
+  ]
+}
